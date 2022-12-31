@@ -1,0 +1,133 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login || Syed Tariq Ahmed
+      </title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+      <div class="nav">
+            <div class="logo">
+              <h1>
+            Syed Tarique Ahmed
+              </h1>
+            </div>
+            <div class="nav-links">
+              <ul>
+                <li><a href="./home.html">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">CONTACT</a></li>
+              </ul>
+            </div>
+            <div class="buttons">
+              <button><a href="../index.html"> Sign Up</a></button>
+              <button><a href="./login.html"> Sign In</a></button>
+            </div>
+          </div>  
+      <div class="login-card-container">
+            <img src="./images/log.svg" alt="">
+            <div class="login-card">
+                  <div class="login-card-logo">
+                        <!-- <img src="./logo.png" alt="logo"> -->
+                  </div>
+                  <div class="login-card-header">
+                        <h1>Sign In</h1>
+                        <div>
+                              Please Login to use platform
+                        </div>
+                  </div>
+                  <form m class="login-card-form" onsubmit="return login()">
+                        <div class="form-item">
+                              <span class=" form-item-icon material-symbols-outlined">email</span>
+                              <input type="email" id="email" placeholder="Enter Email" autofocus>
+                        </div>
+                        <div class="form-item">
+                              <span class="form-item-icon material-symbols-outlined">lock</span>
+                              <input type="password" id="password" placeholder="Enter Password">
+                        </div>
+                        <div class="form-item-others">
+                              <div class="checkbox">
+                                    <input type="checkbox" id="rememberMeCheckbox">
+                                    <label for="rememberMeCheckbox">Remember
+                                          me</label>
+                              </div>
+                              <a href="#">I forget my password!</a>
+                        </div>
+                        <button>Sign In</button>
+                  </form>
+                  <div class="login-card-footer">
+                        Don't
+                        have
+                        an
+                        account
+                        ?
+                        <a href="../index.html">Create
+                              a
+                              Free
+                              account</a>
+                  </div>
+            </div>
+      </div>
+      <footer>
+            <div class="footer-container">
+                  <div class="sec aboutus">
+                        <h2>About Us</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eius placeat deleniti, neque
+                              soluta rem ipsa
+                              nemo unde ut perferendis tempora velit fugiat praesentium, nostrum obcaecati, repellendus
+                              architecto quisquam.
+                              Suscipit.</p>
+                        <ul class="sci">
+                              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                  </div>
+                  <div class="sec quickLinks">
+                        <h2>Quick Links</h2>
+                        <ul>
+                              <li><a href="#">About</a></li>
+                              <li><a href="#">FAQ</a></li>
+                              <li><a href="#">Privacy Policy</a></li>
+                              <li><a href="#">Help</a></li>
+                              <li><a href="#">Terms & Condition</a></li>
+                              <li><a href="#">Contact</a></li>
+                        </ul>
+                  </div>
+                  <div class="sec contacting">
+                        <h2>Connect</h2>
+                        <ul class="info">
+                              <li>
+                                    <span><i class="fa-solid fa-phone"></i></span>
+                                    <span><a href="tel: 03456276164"> 123-456-789</a></span>
+                              </li>
+                              <li>
+                                    <span><i class="fa-solid fa-map"></i></span>
+                                    <span>123 Anywhere St.,<br /> Any City , ST 12345</span>
+                              </li>
+                              <li>
+                                    <span><i class="fa-solid fa-envelope"></i></span>
+                                    <span>hello@reallygreatsite.com</span>
+                              </li>
+                        </ul>
+                  </div>
+            </div>
+      </footer>
+
+      <script src="./script.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel || Kashan Adnan</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" hr ef="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-band">
+            <h2>Syed Tariq Ahmed</h2>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="./index.html"><span
+                                class="las la-igloo"></span>Dashboard<span></span></a></li>
+                    <li><a href="./student.html" ><span class="las la-users"></span>Students<span></span></a></li>
+                    <li><a href="./desc.html"  class="active"><i class="fa-solid fa-paper-plane"></i>Description<span></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <header class="header">
+            <div class="header-title">
+                <h2>
+                    <label for="">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Dashboard
+                </h2>
+                <div class="search-wrapper">
+                    <span class="las la-search"></span>
+                    <input type="search" placeholder="Search Here ">
+                </div>
+                <div class="user-wrapper">
+                    <img src="../images/3.jpg" alt="">
+                    <div>
+                        <h4>Syed Tariq Ahmed</h4>
+                        <small>Super Admin</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Class Description</h2>
+
+                        </div>
+                        <div class="card-body">
+                            <form action="">
+                                <input type="text" name="" id="desc" placeholder="Enter Your Description Heading">
+                                <textarea type="datetime-local" row="30" cols="10" name="" id="date"
+                                    placeholder="Enter Your Class Description Paragraph"></textarea>
+                                <input type="datetime-local" name="" id="paradesc"
+                                    placeholder="Enter Your Description Paragraph">
+                                <input type="file" id="file">
+                                <button onclick="return sendDescription()">Send Description</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+</body>
+<script src="desc.js"></script>
+
+</html>

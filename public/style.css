@@ -1,0 +1,583 @@
+@import url("./reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 10px 90px !important;
+    background-color: rgb(104, 104, 255) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important;
+    z-index: 1 !important;
+    top: 0 !important;
+    width: 1346.65px !important;
+    margin-bottom: 50px !important;
+    position: sticky !important;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    margin-top: -10px;
+    border-bottom-right-radius: 100px;
+}
+
+.nav .logo img {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+}
+
+.nav .logo h1 {
+    margin-top: 10px;
+    font-size: 34px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.nav .line {
+    border: 1px solid #ccc;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.nav-links ul li {
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.buttons button {
+    padding: 10px 30px;
+    border: 0;
+    /* border: 1px solid #EFF5F5; */
+    margin-right: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    font-family: 'Poppins';
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #fff;
+}
+
+.buttons button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.buttons button:hover {
+    box-shadow: 0px 0 10px rgba(0, 0, 0, .62);
+    border-radius: 20px;
+    cursor: pointer;
+    transform: scale(110%);
+    /* margin-right: 0px; */
+    transition: 0.5s;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    /* background-color: rgba(100, 139, 172, 0.233); */
+    width: 100%;
+    background-size: 100% 100%;
+}
+
+.signup-card-container img {
+    width: 500px;
+}
+
+.signup-card {
+    width: 1005;
+    /* height: 300px; */
+    background-color: #fff;
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+    margin-top: -20px;
+    height: 600px;
+    font-family: 'Poppins';
+    margin-bottom: 130px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.22);
+    transform: var();
+}
+
+.signup-card-header,
+.signup-card-footer {
+    text-align: center;
+}
+
+/* .signup-card a {
+    text-decoration: none;
+    color: #35339a;
+} */
+
+.signup-card a:hover {
+    text-decoration: underline;
+}
+
+/* .signup-card-header {
+    margin-bottom: 2rem;
+} */
+
+.signup-card-form h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000;
+    /* margin: 0;/ */
+    margin-left: -190px;
+    text-align: left;
+    width: 400px;
+    margin-top: -30px;
+    text-align: center;
+}
+
+.signup-card-header h1+div {
+    font-size: calc(1.5rem * .7);
+    opacity: .7;
+}
+
+.signup-card-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+.signup-card-form .form-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-card-form .form-item .form-item-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1.4rem;
+    font-size: 1.3rem;
+    opacity: .4;
+    color: #000 !important;
+}
+
+.signup-card-form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.signup-card-form .form-item-others {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    font-size: calc(1rem * .8);
+    margin-bottom: .5rem;
+}
+
+.signup-card-footer {
+    margin-top: 1.5rem;
+    font-size: calc(1rem * .8);
+}
+
+.signup-card input[type="text"],
+.signup-card input[type="number"],
+.signup-card input[type="email"],
+.signup-card input[type="password"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5);
+    width: 350px;
+    transition: background .5s;
+    color: #000;
+    background-color: rgba(200, 220, 255, 0.6);
+}
+
+.signup-card input {
+    background-color: rgba(148, 148, 255, 0.788);
+}
+
+.signup-card input::placeholder {
+    font-family: 'Poppins';
+    color: #000;
+    margin-bottom: 6px;
+}
+
+.signup-card input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: black;
+    border: 0;
+}
+
+.signup-card button {
+    padding: 1rem 1.5rem;
+    font-family: 'Poppins';
+    background-color: rgb(134, 134, 255);
+    color: #fff;
+    border: 0;
+    outline: 0;
+    /* border-radius: 10px; */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .5s;
+    width: 150px;
+    /* margin-left: -500px; */
+    transform: translateX(-60%);
+}
+
+.signup-card button:hover {
+    box-shadow: 0px 0 25px rgba(0, 0, 0, 0.61);
+    transform: translateX(10%);
+    background-color: rgb(104, 104, 255) !important;
+    /* transform: rotate(180deg); */
+    /* border-radius: 30px; */
+}
+
+.signup-card .signup-card-form button:hover {
+    background-color: #497174;
+}
+
+.signup-card-social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.signup-card-social>div {
+    opacity: .8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: calc(1rem * .8);
+}
+
+.signup-card-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.signup-card-social-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 100px;
+    transition: 0.4s;
+}
+
+.signup-card-social-btn a:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background-color: rgb(104, 104, 255);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Poppins';
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-top-left-radius: 100px;
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-container .sec {
+    margin-right: 30px;
+}
+
+footer .footer-container .aboutus {
+    width: 40%;
+}
+
+footer h2 {
+    position: relative;
+    color: #D6E4E5;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer h2::before {
+    content: ' ';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: rgb(255, 139, 139);
+}
+
+footer .footer-container .aboutus p {
+    color: #EFF5F5;
+}
+
+footer .sci {
+    margin-top: 20px;
+    display: flex;
+    margin-left: -30px;
+}
+
+footer .sci li {
+    list-style-type: none;
+}
+
+footer .sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #EFF5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+footer .sci li a .fa-brands {
+    /* color: #497174; */
+    font-size: 20px;
+}
+
+footer .quickLinks {
+    position: relative;
+    width: 25%;
+}
+
+footer .quickLinks ul {
+    margin-left: -30px;
+}
+
+footer .quickLinks ul li {
+    list-style-type: none;
+}
+
+footer .quickLinks ul li a {
+    color: #EFF5F5;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+footer .quickLinks ul li a:hover {
+    color: #fff;
+}
+
+footer .contacting {
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+footer .contacting .info {
+    position: relative;
+    margin-left: -30px;
+}
+
+footer .contacting .info li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+footer .contacting .info li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+footer .contacting .info li span {
+    color: #EFF5F5;
+}
+
+footer .contacting .info li span a {
+    color: #EFF5F5;
+    text-decoration: none;
+}
+
+footer .contacting .info li span a:hover {
+    color: #fff;
+}
+
+footer .heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+
+@media (max-width : 700px) {
+    .nav {
+        width: 417.6500000000001px !important;
+        padding: 10px 10px;
+        /* margin-top: 40px; */
+        margin-left: -39px;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .logo h1 {
+        font-size: 27px !important;
+        width: 300px;
+    }
+    .nav-links{
+        margin-top: -20px;
+    }
+    .nav-links li a {
+        font-size: 13px;
+        width: 60px;
+    }
+
+    .signup-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 894px;
+        margin-left: 4px !important;
+        width: 335px !important;
+    }
+    .signup-card-container img {
+        width: 310px;
+        margin-top: 40px;
+    }   
+    footer .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .buttons{
+        margin-left: -93px;
+    }
+    .buttons button {
+        padding: 10px 25px;
+        border: 0;
+        /* border: 1px solid #EFF5F5; */
+        margin-right: -31px;
+        margin-left: 40px;
+        font-size: 15px;
+        background-color: transparent;
+        font-family: 'Poppins';
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #ffffff;
+        border-right: 1px solid #fff;
+    }
+    .signup-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 894px;
+        margin-left: -5px;
+        width: 342px;
+    }
+    .signup-card input[type="text"], .signup-card input[type="number"], .signup-card input[type="email"], .signup-card input[type="password"] {
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid black;
+        padding: 1rem 1.5rem;
+        padding-left: calc(1rem * 3.5);
+        width: 294px;
+        transition: background .5s;
+        color: #000;
+        background-color: rgba(200, 220, 255, 0.6);
+    }
+    .signup-card-form h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #000;
+        margin-left: -151px;
+        text-align: left;
+        width: 400px;
+        margin-top: 56px;
+        text-align: center;
+    }
+    .signup-card-form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        width: 347px;
+        margin-top: -80px;
+    }
+    .signup-card button {
+        padding: 1rem 1.5rem;
+        font-family: 'Poppins';
+        background-color: rgb(134, 134, 255);
+        color: #fff;
+        border: 0;
+        outline: 0;
+        /* border-radius: 10px; */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: .5s;
+        width: 150px;
+        margin-left: 41px;
+        transform: translateX(-60%);
+    }
+    footer {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 44px 40px;
+        background-color: rgb(104, 104, 255);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-family: 'Poppins';
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-top-left-radius: 100px;
+    }
+    footer .footer-container .sec {
+        margin-right: 506px;
+    }
+}

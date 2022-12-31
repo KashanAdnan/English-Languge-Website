@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176, #69a6ce, #9b59b6);
+    height: 100vh;
+    background-size: 400%;
+}
+
+.error-page {
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    right: 17%;
+    bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.error-page .content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.error-page .content h1 {
+    font-size: 18vw;
+    line-height: 1em;
+}
+
+.error-page .content h4 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #000;
+    max-width: 600px;
+    font-size: 2em;
+}
+
+.error-page .content p {
+    font-size: 1.2em;
+    color: #0d0d0d;
+}
+
+.error-page .content .btns {
+    margin: 25px 0;
+    display: inline-flex;
+}
+
+.error-page .content .btns a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #69a6ce;
+    color: #69a6ce;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.error-page .content .btns a:hover {
+    background-color: #69a6ce;
+    color: #fff;
+}

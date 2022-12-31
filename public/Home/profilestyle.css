@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 10px 90px !important;
+    background-color: rgb(104, 104, 255) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important;
+    z-index: 1 !important;
+    top: 0 !important;
+    width: 86.80% !important;
+    position: fixed !important;
+    color: #000;
+    height: 60px;
+    margin-top: -10px;
+    border-bottom-right-radius: 100px;
+}
+
+
+.nav .logo h1 {
+    margin-top: 10px;
+    font-size: 34px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.nav .line {
+    border: 1px solid #ccc;
+}
+
+.user img {
+    width: 60px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.nav-links ul li {
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.buttons button {
+    padding: 10px 30px;
+    border: 0;
+    /* border: 1px solid #EFF5F5; */
+    margin-right: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    font-family: 'Poppins';
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #fff;
+}
+
+.buttons button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.buttons button:hover {
+    box-shadow: 0px 0 10px rgba(0, 0, 0, .62);
+    border-radius: 20px;
+    cursor: pointer;
+    transform: scale(110%);
+    /* margin-right: 0px; */
+    transition: 0.5s;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    right: 5%;
+    top: 92%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    z-index: -1;
+}
+
+.sub-menu-wrap.open-wrap {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.user-info h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.user-info img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.sub-menu hr {
+    width: 100%;
+    border: 0;
+    background-color: #ccc;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+.sub-menu-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 20px 0;
+}
+
+.sub-menu-links p {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.sub-menu-links img {
+    width: 35px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+    margin-top: -10px;
+}
+
+.sub-menu-links span {
+    font-size: 22px;
+    transition: transform 0.4s;
+}
+
+.sub-menu-links:hover span {
+    transform: translateX(5px);
+    color: #525252;
+}
+
+.sub-menu-links:hover p {
+    font-weight: 600;
+    color: #525252;
+}
+
+.sidebar-container {
+    background-color: rgb(104, 104, 255);
+    width: 300px;
+    height: 91vh;
+    margin-top: 130px;
+    padding: 10px;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .62);
+}
+
+.sidebar-wrap h1 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 80%;
+    word-spacing: 30px;
+}
+
+.side-menu h1 i {
+    margin-right: 10px;
+}
+
+.side-menu {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.side-menu:hover span {
+    transform: translateX(10px);
+}
+
+.side-menu span {
+    color: #ffff;
+    font-size: 23px;
+    font-weight: 500;
+    transition: transform 0.5s;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+main .container {
+    width: 80%;
+    height: 80vh;
+    margin-left: 320px;
+    margin-top: 70px;
+}
+
+main .container .signUp,
+.Admission {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+main .container .signUp h2,
+main .container .Admission h2 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #525252;
+    margin-top: 10px;
+    border-bottom: 2px solid rgb(104, 104, 255);
+}
+
+main .container .signUp label,
+main .container .Admission label {
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+main .container .signUp input,
+main .container .Admission input {
+    width: 400px;
+    padding: 10px 20px;
+}
+
+main .container .signUp button,
+.Admission button {
+    padding: 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #939393;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+main .container .signUp button:hover,
+.Admission button:hover {
+    background-color: #525252;
+}
+
+main .container h1 {
+    font-size: 40px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+footer {
+    position: relative;
+    width:61%;
+    height: auto;
+    padding: 50px 100px;
+    background-color: rgb(104, 104, 255);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Poppins';
+    border-top-left-radius: 100px;
+    margin-left: 321px;
+    margin-top: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-container .sec {
+    margin-right: 30px;
+}
+
+footer .footer-container .aboutus {
+    width: 40%;
+}
+
+footer h2 {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer h2::before {
+    content: ' ';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: rgb(255, 139, 139);
+}
+
+footer .footer-container .aboutus p {
+    color: #ffff;
+}
+
+footer .sci {
+    margin-top: 20px;
+    display: flex;
+    margin-left: -30px;
+}
+
+footer .sci li {
+    list-style-type: none;
+}
+
+footer .sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #ffff;
+    color: #6868ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+footer .sci li a .fa-brands {
+    /* color: #497174; */
+    font-size: 20px;
+}
+
+footer .quickLinks {
+    position: relative;
+    width: 25%;
+}
+
+footer .quickLinks ul {
+    margin-left: 5px;
+}
+
+footer .quickLinks ul li {
+    list-style-type: none;
+}
+
+footer .quickLinks ul li a {
+    color: #EFF5F5;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+footer .quickLinks ul li a:hover {
+    color: #fff;
+}
+
+footer .contacting {
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+footer .contacting .info {
+    position: relative;
+    margin-left: 2px;
+}
+
+footer .contacting .info li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+footer .contacting .info li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+footer .contacting .info li span {
+    color: #fff;
+}
+
+footer .contacting .info li span a {
+    color: #EFF5F5;
+    text-decoration: none;
+}
+
+footer .contacting .info li span a:hover {
+    color: #fff;
+}
+
+footer .heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+}

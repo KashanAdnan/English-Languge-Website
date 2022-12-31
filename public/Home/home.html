@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syed Tariq Ahmed</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" hr ef="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="nav">
+    <div class="logo">
+      <h1>
+        Syed Tarique Ahmed
+      </h1>
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#course">COURSES</a></li>
+        <li><a href="#teacher">TEACHER</a></li>
+        <li><a href="#pricing">PRICING</a></li>
+      </ul>
+    </div>
+    <div class="buttons">
+      <button><a href="../Register/register.html">Admisson</a></button>
+    </div>
+    <div class="user">
+      <img src="./images/user.png" onclick="toggleMenu()" alt="">
+    </div>
+    <div class="sub-menu-wrap" id="sub">
+      <div class="sub-menu">
+        <div class="user-info">
+          <img src="./images/user.png" alt="">
+          <h1 id="username">Kashan Adnan</h1>
+
+        </div>
+        <hr />
+        <a href="./profile.html" class="sub-menu-links">
+          <img src="./images/profile.png" alt="profile">
+          <p>Edit Profile</p>
+          <span>></span>
+        </a>
+        <a href="#" class="sub-menu-links">
+          <img src="./images/setting.png" alt="profile">
+          <p>Settings & Privacy</p>
+          <span>></span>
+        </a>
+        <a href="#" class="sub-menu-links">
+          <img src="./images/help.png" alt="help">
+          <p>Help & Support</p>
+          <span>></span>
+        </a>
+        <a href="#" class="sub-menu-links">
+          <img src="./images/logout.png" alt="profile">
+          <p>Logout</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="container" id="home">
+      <div class="sidebar">
+        <img src="./images/jump.jpg" alt="">
+        <h1>Back To School</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          alias perferendi
+        </p>
+      </div>
+      <hr>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="content">
+              <img src="./images/tablet.jpg" alt="">
+              <h1>Coding Project</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, fuga perferendis ratione iusto cumque
+                tenetur doloremque, magnam dolor sapiente sequi nemo quaerat fugit ex repellendus aut nesciunt cum
+                pariatur fugiat dolorem alias. Ea quaerat itaque voluptate. Dignissimos ea aut totam ullam doloremque
+                quisquam.
+              </p>
+              <button>Explore More !</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="content">
+              <img src="./images/talking.jpg" alt="">
+              <h1>Coding Project</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, fuga perferendis ratione iusto cumque
+                tenetur doloremque, magnam dolor sapiente sequi nemo quaerat fugit ex repellendus aut nesciunt cum
+                pariatur fugiat dolorem alias. Ea quaerat itaque voluptate. Dignissimos ea aut totam ullam doloremque
+                quisquam.
+              </p>
+              <button>Explore More !</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="content">
+              <img src="./images/padhailikhai.jpg" alt="">
+              <h1>Coding Project</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, fuga perferendis ratione iusto cumque
+                tenetur doloremque, magnam dolor sapiente sequi nemo quaerat fugit ex repellendus aut nesciunt cum
+                pariatur fugiat dolorem alias. Ea quaerat itaque voluptate. Dignissimos ea aut totam ullam doloremque
+                quisquam.
+              </p>
+              <button>Explore More !</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <hr>
+      <div class="sidebar top-side">
+        <img src="./images/jump.jpg" alt="">
+        <h1>Back To School</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          alias perferendi
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebar">
+        <img src="./images/jump.jpg" alt="">
+        <h1>Back To School</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          alias perferendi
+        </p>
+      </div>
+      <hr>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="content">
+              <img src="./images/tablet.jpg" alt="">
+              <h1>Coding Project</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, fuga perferendis ratione iusto cumque
+                tenetur doloremque, magnam dolor sapiente sequi nemo quaerat fugit ex repellendus aut nesciunt cum
+                pariatur fugiat dolorem alias. Ea quaerat itaque voluptate. Dignissimos ea aut totam ullam doloremque
+                quisquam.
+              </p>
+              <button>Explore More !</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="content">
+              <img src="./images/talking.jpg" alt="">
+              <h1>Coding Project</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, fuga perferendis ratione iusto cumque
+                tenetur doloremque, magnam dolor sapiente sequi nemo quaerat fugit ex repellendus aut nesciunt cum
+                pariatur fugiat dolorem alias. Ea quaerat itaque voluptate. Dignissimos ea aut totam ullam doloremque
+                quisquam.
+              </p>
+              <button>Explore More !</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="content">
+              <img src="./images/padhailikhai.jpg" alt="">
+              <h1>Coding Project</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, fuga perferendis ratione iusto cumque
+                tenetur doloremque, magnam dolor sapiente sequi nemo quaerat fugit ex repellendus aut nesciunt cum
+                pariatur fugiat dolorem alias. Ea quaerat itaque voluptate. Dignissimos ea aut totam ullam doloremque
+                quisquam.
+              </p>
+              <button>Explore More !</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <hr>
+      <div class="sidebar top-side">
+        <img src="./images/jump.jpg" alt="">
+        <h1>Back To School</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          alias perferendi
+        </p>
+      </div>
+    </div>
+    <div id="course"></div>
+    <h1 class="heading">Courses We Offer</h1>
+    <div class="courses-offer">
+      <div class="course">
+        <h1>Basic level</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+      <div class="course">
+        <h1>Intermediate level</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+      <div class="course">
+        <h1>Advance level</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+      <div class="course">
+        <h1>Conversation Class</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+      <div class="course">
+        <h1>IELTS Training</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+      <div class="course">
+        <h1>TESOL</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+      <div class="course">
+        <h1>TEFl</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae reiciendis suscipit,
+          repellendus blanditiis libero maxime, soluta nihil cum voluptates similique sequi cupiditate odio delectus ad
+          at molestias eos!</p>
+      </div>
+    </div>
+    <!-- <h1 class="heading">Teachers</h1> -->
+    <div class="phone-cont" id="teacher">
+
+      <div class="phone">
+        <div class="phone-content">
+          <h1>Teacher Profile</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione distinctio necessitatibus iusto enim
+            nostrum illo! Culpa suscipit officia voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Deserunt sint earum quia facere unde, aliquam fugit ipsum ipsa omnis tempore.</p>
+        </div>
+        <img src="./images/myimage.jpg" alt="" />
+      </div>
+
+    </div>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-container">
+            <div class="testimonials">
+              <div class="inner">
+                <img src="./images/1.jpg" alt="1person">
+                <div class="test-row">
+                  <div class="tes-col">
+                    <div class="testimonial">
+                      <div class="name">Syed Tariq Ahmed</div>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda laboriosam! Ad,
+                        doloribus aliquid fugit similique qui veritatis recusandae ut ab, rem harum possimus corrupti
+                        illo
+                        itaque modi culpa beatae.</p>
+                      <button>See More !</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-container">
+            <div class="testimonials">
+              <div class="inner">
+                <img src="./images/1.jpg" alt="1person">
+                <div class="test-row">
+                  <div class="testimonial">
+                    <div class="tes-col">
+                      <div class="name">Sir Ahmer</div>
+                      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda laboriosam! Ad,
+                        doloribus aliquid fugit similique qui veritatis recusandae ut ab, rem harum possimus corrupti
+                        illo
+                        itaque modi culpa beatae.</p>
+                      <button>See More !</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+<h1 style="text-align: center; margin-top: 20px;
+margin-bottom: 20px;font-weight: 300; font-size: 47px;">Class Description</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" id="showdata">
+        <div class="carousel-item active">
+          <div class="classdesc">
+            <div class="desc-content">
+                <h1 id="headposts">Syed Tariq Ahmed</h1>
+              <p id="paragraphpost">2022-12-18T12:17</p>
+              <p id="date">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not on</p>
+            </div>
+            <div class="img-of-desc">
+              <img src="./images/keyboard.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="heading">
+    <h1>Our Services</h1>
+  </div>
+  <div class="services">
+    <div class="services-child">
+      <h1>Brand Story</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam corporis labore iure accusantium
+        praesentium maxime officiis animi iusto, repellat impedit sit deserunt a magni aut ut molestiae, aliquam
+        ducimus!</p>
+    </div>
+    <div class="services-child">
+      <h1>Content Strategy</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam corporis labore iure accusantium
+        praesentium maxime officiis animi iusto, repellat impedit sit deserunt a magni aut ut molestiae, aliquam
+        ducimus!</p>
+    </div>
+    <div class="services-child">
+      <h1>UX Strategy</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam corporis labore iure accusantium
+        praesentium maxime officiis animi iusto, repellat impedit sit deserunt a magni aut ut molestiae, aliquam
+        ducimus!</p>
+    </div>
+    <div class="services-child">
+      <h1>Visual Design</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam corporis labore iure accusantium
+        praesentium maxime officiis animi iusto, repellat impedit sit deserunt a magni aut ut molestiae, aliquam
+        ducimus!</p>
+    </div>
+    <div class="services-child">
+      <h1>UI / UX Design</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam corporis labore iure accusantium
+        praesentium maxime officiis animi iusto, repellat impedit sit deserunt a magni aut ut molestiae, aliquam
+        ducimus!</p>
+    </div>
+    <div class="services-child">
+      <h1>Devolopment</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam corporis labore iure accusantium
+        praesentium maxime officiis animi iusto, repellat impedit sit deserunt a magni aut ut molestiae, aliquam
+        ducimus!</p>
+    </div>
+  </div>
+  <h1 class="price-head" id="pricing">
+    Choose your Plan
+  </h1>
+  <div class="price-container">
+    <div class="basiclevel">
+      <div class="level">
+        Basic Level
+      </div>
+      <div class="price">
+        <h1>$600</h1>
+        <div class="tim-usd">
+          <small class="time">2 Hours</small>
+          <small class="usd">25.Usd</small>
+        </div>
+      </div>
+      <div class="work">
+        <h1>Standard</h1>
+        <ol>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Speaking</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Web Devolopment</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Web Hosting</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>Graphic Designing</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>Microsoft</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>Heroku</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>MERN Stack</li>
+        </ol>
+
+        <button>Enroll Now !</button>
+      </div>
+    </div>
+    <div class="intermediatelevel">
+      <div class="level">
+        Intermidiate Level
+      </div>
+      <div class="price">
+        <h1>$1200</h1>
+        <div class="tim-usd">
+          <small class="time">5 Hours</small>
+          <small class="usd">60.Usd</small>
+        </div>
+      </div>
+      <div class="work">
+        <h1>Intermidiate</h1>
+        <ol>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Speaking</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Web Devolopment</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Grapic Designing</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Web Hosting</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>Microsoft</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>Heroku</li>
+          <li><i class="fa-sharp fa-solid fa-circle-xmark"></i>MERN Stack</li>
+        </ol>
+
+        <button>Enroll Now !</button>
+      </div>
+    </div>
+    <div class="advancelevel">
+      <div class="level">
+        Advance Level
+      </div>
+      <div class="price">
+        <h1>$2600</h1>
+        <div class="tim-usd">
+          <small class="time">10 Hours</small>
+          <small class="usd">328.Usd</small>
+        </div>
+      </div>
+      <div class="work">
+        <h1>Premium</h1>
+        <ol>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Speaking</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Web Devolopment</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Grapic Designing</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Microsoft</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Heroku</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>MERN Stack</li>
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i>Web Hosting</li>
+        </ol>
+
+        <button>Enroll Now !</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="sec aboutus">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eius placeat deleniti, neque soluta rem ipsa
+          nemo unde ut perferendis tempora velit fugiat praesentium, nostrum obcaecati, repellendus architecto quisquam.
+          Suscipit.</p>
+        <ul class="sci">
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec quickLinks">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Terms & Condition</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="sec contacting">
+        <h2>Connect</h2>
+        <ul class="info">
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <span><a href="tel: 03456276164"> 123-456-789</a></span>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-map"></i></span>
+            <span>123 Anywhere St.,<br /> Any City , ST 12345</span>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <span>hello@reallygreatsite.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="./script.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</html>

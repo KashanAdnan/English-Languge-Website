@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="profilestyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <h1>
+                Syed Tarique Ahmed
+            </h1>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#course">COURSES</a></li>
+                <li><a href="#teacher">TEACHER</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button><a href="../Register/register.html">Admisson</a></button>
+        </div>
+        <div class="user">
+            <img src="./images/user.png" onclick="toggleMenu()" alt="">
+        </div>
+        <div class="sub-menu-wrap" id="sub">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="./images/user.png" alt="">
+                    <h1 id="username">Kashan Adnan</h1>
+
+                </div>
+                <hr />
+                <a href="#" class="sub-menu-links">
+                    <img src="./images/profile.png" alt="profile">
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-links">
+                    <img src="./images/setting.png" alt="profile">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-links">
+                    <img src="./images/help.png" alt="help">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-links">
+                    <img src="./images/logout.png" alt="profile">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+                <a href="./home.html" class="sub-menu-links">
+                    <img src="./images/logout.png" alt="profile">
+                    <p>Go back</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <main>
+
+        <div class="sidebar-container">
+            <div class="sidebar-wrap">
+                <a href="./profile.html" class="side-menu">
+                    <h1><i class="fa-solid fa-user"></i>Profile </h1><span><i
+                            class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="" class="side-menu">
+                    <h1><i class="fa-solid fa-lock"></i>Security </h1><span><i
+                            class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Edit Your Password</h1>
+            <hr>
+            <form action="#" class="signUp">
+                <label for="username">Old Password</label>
+                <input type="password" placeholder="Enter Your Password">
+                <label for="username">New Password</label>
+                <input type="password" placeholder="Enter Your New Password">
+                <label for="email">Confirm Password</label>
+                <input type="password" placeholder="Enter Your Password">
+                <button>Update Password</button>
+            </form>
+            
+           
+        </div>
+    </main>
+    <footer style="margin-top: 10px;">
+        <div class="footer-container">
+          <div class="sec aboutus">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eius placeat deleniti, neque soluta rem ipsa
+              nemo unde ut perferendis tempora velit fugiat praesentium, nostrum obcaecati, repellendus architecto quisquam.
+              Suscipit.</p>
+            <ul class="sci">
+              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Terms & Condition</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="sec contacting">
+            <h2>Connect</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa-solid fa-phone"></i></span>
+                <span><a href="tel: 03456276164"> 123-456-789</a></span>
+              </li>
+              <li>
+                <span><i class="fa-solid fa-map"></i></span>
+                <span>123 Anywhere St.,<br /> Any City , ST 12345</span>
+              </li>
+              <li>
+                <span><i class="fa-solid fa-envelope"></i></span>
+                <span>hello@reallygreatsite.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+</body>
+<script>
+    let subMenu = document.getElementById("sub")
+
+    function toggleMenu() {
+        subMenu.classList.toggle("open-wrap")
+    }
+</script>
+
+</html>
