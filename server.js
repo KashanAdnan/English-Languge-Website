@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const port = 3000;
 const bycrypt = require("bcryptjs");
-const axios = require("axios");
 const jwt = require("jsonwebtoken");
 
 // Databases Requires
