@@ -44,9 +44,9 @@ function delete_data(id) {
   axios
     .delete(`http://localhost:3000/delete/${id}`)
     .then((response) => {
-      setInterval(() => {
+      // setInterval(() => {
         window.location.reload();
-      }, 2000);
+      // }, 2000);
     })
     .catch((err) => {
       alert(err);
@@ -74,6 +74,7 @@ function updating_data(id) {
   console.log(username);
   console.log(email);
   console.log(phone);
+  console.log(id)
   axios
     .put(`http://localhost:3000/update/${id}`, {
       username: username,
@@ -81,11 +82,11 @@ function updating_data(id) {
       phone: phone,
     })
     .then((reponse) => {
-      alert(reponse.data.message);
-      setInterval(() => {
+      // alert(reponse.data.message);
+      // setInterval(() => {
         window.location.reload();
-      }, 2000);
-      console.log(reponse);
+      // }, 2000);
+      // console.log(reponse);
     })
     .catch((err) => {
       alert(err);

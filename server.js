@@ -9,13 +9,12 @@ const axios = require("axios");
 const jwt = require("jsonwebtoken");
 
 // Databases Requires
-const { SignUpUserModel } = require("./signupdatabase");
-const { AdmissionUserModel } = require("./admissiondatbase");
-const { DescModel } = require("./descdatabase");
+const { SignUpUserModel } = require("./Database/signupdatabase");
+const { AdmissionUserModel } = require("./Database/admissiondatbase");
+const { DescModel } = require("./Database/descdatabase");
 
 // Calling express
 const app = express();
-
 // Express Uses
 app.use(cors({ origin: "*", credentials: true }));
 app.use(bodyParser.json());
@@ -25,7 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", express.static(path.resolve(path.join(__dirname, "public"))));
 
 // Sign Up POST Request
-
 app.post("/signUp", (req, res, next) => {
   // Model Of The Database finding one Of them Matchby email
   SignUpUserModel.findOne({ email: req.body.email }, (err, data) => {
@@ -72,7 +70,6 @@ app.post("/signUp", (req, res, next) => {
     }
   });
 });
-
 // Making Login POST Request
 
 app.post("/logIn", (req, res, next) => {
@@ -82,16 +79,18 @@ app.post("/logIn", (req, res, next) => {
         // Breaking The HASH  Password For Checking The User Is Valid or Not Valid by comparing the old password to the req.body.password
         bycrypt.compare(req.body.password, data.password, (err, isFound) => {
           if (isFound) {
-            const token = jwt.sign(
+            var token = jwt.sign(
               {
                 email: req.body.email,
                 password: req.body.password,
               },
-              "hIHkthjUhuvfhuiyvnjy7yii9trefhon",
-              (err, token) => {
-                console.log(token);
-              }
+              "hIHkthjUhuvfhuiyvnjy7yii9trefhon"
             );
+            console.log(token);
+            res.cookie("jToken", token, {
+              maxAge: 86_400_000,
+              httpOnly: true,
+            });
             //Sending Message to Fornt End With Status  Of 200
             res.status(200).send({
               data: data.username + "  Welcome To Our Website ! ",
@@ -106,7 +105,7 @@ app.post("/logIn", (req, res, next) => {
       } else {
         //Sending Message to Fornt End With Status  Of 405
         res.status(405).send({
-          message: "Password is Incorrect !",
+          message: "Email is Incorrect !",
         });
       }
     } else if (
@@ -124,6 +123,52 @@ app.post("/logIn", (req, res, next) => {
       });
     }
   });
+});
+
+app.use((req, res, next) => {
+  if (!req.cookies.jToken) {
+    res.status(401).send({
+      message: "Wrong Token",
+    });
+    return;
+  }
+  jwt.verify(
+    req.cookies.jToken,
+    "hIHkthjUhuvfhuiyvnjy7yii9trefhon",
+    (err, decodeData) => {
+      if (!err) {
+        console.log("hellollo");
+        const issueDate = decodeData.iat * 1000;
+        const nowDate = new Date().getTime();
+        const diff = nowDate - issueDate; // 86400,000
+        console.log(diff);
+        if (diff > 300000) {
+          res.status(401).send({
+            message: "Token Expired",
+          });
+        } else {
+          var token = jwt.sign(
+            {
+              id: decodeData.id,
+              email: decodeData.email,
+              password: decodeData.password,
+            },
+            "hIHkthjUhuvfhuiyvnjy7yii9trefhon"
+          );
+          res.cookie("jToken", token, {
+            maxAge: 86_400_000,
+            httpOnly: true,
+          });
+          req.body.jToken = decodeData;
+          next();
+        }
+      } else {
+        res.status(401).send({
+          message: "invalid token",
+        });
+      }
+    }
+  );
 });
 
 // Making  The Admission POST Request For Adding Student
@@ -227,14 +272,13 @@ app.delete("/delete/:id", (req, res) => {
 });
 
 app.put("/update/:id", (req, res) => {
-  AdmissionUserModel.findOneAndUpdate(
+  SignUpUserModel.findOneAndUpdate(
     { id: req.params.id },
     {
       $set: {
-        stDname: req.body.stDname ,
+        username: req.body.username,
         email: req.body.email,
-        contactno: req.body.contactno,
-        level: req.body.level,
+        phone: req.body.phone,
       },
     }
   )
@@ -286,6 +330,16 @@ app.put("/admiupdate/:id", (req, res) => {
         message: err,
       });
     });
+});
+
+app.post("/logout", (req, res, next) => {
+  res.cookie("jToken", "", {
+    maxAge: 86_400_000,
+    httpOnly: true,
+  });
+  res.status(200).send({
+    message: "Logout Succesfully !",
+  });
 });
 
 app.post("/desc", (req, res, next) => {

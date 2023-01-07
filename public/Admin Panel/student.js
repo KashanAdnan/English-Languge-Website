@@ -78,17 +78,17 @@ function updating_data(id) {
   console.log(email);
   console.log(contactno);
   axios
-    .put(`http://localhost:3000/update/${id}`, {
+    .put(`http://localhost:3000/admiupdate/${id}`, {
       stDname: stDname,
       email: email,
       contactno: contactno,
       contactno: adress,
     })
     .then((reponse) => {
-      setInterval(() => {
+      // setInterval(() => {
         window.location.reload();
-      }, 100);
-      console.log(reponse);
+      // }, 100);
+      // console.log(reponse);
     })
     .catch((err) => {
       alert(err);
