@@ -125,11 +125,11 @@ app.post("/logIn", (req, res, next) => {
 });
 
 // app.use((req, res, next) => {
-//   if (!req.cookies) {
+//   if (!req.cookies.jToken) {
 //     res.status(401).send({
 //       message: "Wrong Token",
 //     });
-//     return;
+//     return;5
 //   }
 //   jwt.verify(
 //     req.cookies,
