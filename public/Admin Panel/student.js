@@ -45,9 +45,9 @@ function delete_data(id) {
   axios
     .delete(`http://localhost:3000/admidelete/${id}`)
     .then((response) => {
-      setInterval(() => {
+      // setInterval(() => {
         window.location.reload();
-      }, 100);
+      // }, 100);
     })
     .catch((err) => {
       alert(err);
@@ -68,29 +68,58 @@ function getting_data(_id, stDname, contactno, email , adress) {
   </tr>
   `;
 }
+        // function updating_data(id) {
+        //   console.log("helll");
+        //   const stDname = document.getElementById(`${id}-stDname`).value;
+        //   const email = document.getElementById(`${id}-email`).value;
+        //   const contactno = document.getElementById(`${id}-contactno`).value;
+        //   const adress = document.getElementById(`${id}-adress`).value;
+        //   console.log(stDname);
+        //   console.log(email);
+        //   console.log(contactno);
+        //   axios
+        //     .put(`http://localhost:3000/admiupdate/${id}`, {
+        //       stDname: stDname,
+        //       email: email,
+        //       contactno: contactno,
+        //       contactno: adress,
+        //     })
+        //     .then((reponse) => {
+        //       // setInterval(() => {
+        //         window.location.reload();
+        //       // }, 100);
+        //       // console.log(reponse);
+        //     })
+        //     .catch((err) => {
+        //       alert(err);
+        //     });
+        // }
+
 function updating_data(id) {
-  console.log("helll");
-  const stDname = document.getElementById(`${id}-stDname`).value;
-  const email = document.getElementById(`${id}-email`).value;
-  const contactno = document.getElementById(`${id}-contactno`).value;
-  const adress = document.getElementById(`${id}-adress`).value;
-  console.log(stDname);
-  console.log(email);
-  console.log(contactno);
-  axios
-    .put(`http://localhost:3000/admiupdate/${id}`, {
-      stDname: stDname,
-      email: email,
-      contactno: contactno,
-      contactno: adress,
-    })
-    .then((reponse) => {
-      // setInterval(() => {
-        window.location.reload();
-      // }, 100);
-      // console.log(reponse);
-    })
-    .catch((err) => {
-      alert(err);
-    });
+  const url = "http://localhost:3000";
+  const Http = new XMLHttpRequest();
+  Http.open("PUT", url + `/admiupdate/${id}`);
+  Http.setRequestHeader("Content-Type", "application/json");
+  let obj = {
+     stDname : document.getElementById(`${id}-stDname`).value,
+     email : document.getElementById(`${id}-email`).value,
+     contactno : document.getElementById(`${id}-contactno`).value,
+     adress : document.getElementById(`${id}-adress`).value,
+  };
+  Http.send(JSON.stringify(obj));
+  Http.onreadystatechange = (e) => {
+    console.log(e);
+    if (Http.readyState === 4) {
+      if (Http.status === 200) {
+        let jsonRes = JSON.parse(Http.responseText);
+        alert(jsonRes.message);
+        window.location.reload()
+      } else {
+        let jsonRes = JSON.parse(Http.responseText);
+        alert(jsonRes.message);
+      }
+    }
+  };
+
+  return false;
 }

@@ -125,51 +125,51 @@ app.post("/logIn", (req, res, next) => {
   });
 });
 
-app.use((req, res, next) => {
-  if (!req.cookies.jToken) {
-    res.status(401).send({
-      message: "Wrong Token",
-    });
-    return;
-  }
-  jwt.verify(
-    req.cookies.jToken,
-    "hIHkthjUhuvfhuiyvnjy7yii9trefhon",
-    (err, decodeData) => {
-      if (!err) {
-        console.log("hellollo");
-        const issueDate = decodeData.iat * 1000;
-        const nowDate = new Date().getTime();
-        const diff = nowDate - issueDate; // 86400,000
-        console.log(diff);
-        if (diff > 300000) {
-          res.status(401).send({
-            message: "Token Expired",
-          });
-        } else {
-          var token = jwt.sign(
-            {
-              id: decodeData.id,
-              email: decodeData.email,
-              password: decodeData.password,
-            },
-            "hIHkthjUhuvfhuiyvnjy7yii9trefhon"
-          );
-          res.cookie("jToken", token, {
-            maxAge: 86_400_000,
-            httpOnly: true,
-          });
-          req.body.jToken = decodeData;
-          next();
-        }
-      } else {
-        res.status(401).send({
-          message: "invalid token",
-        });
-      }
-    }
-  );
-});
+// app.use((req, res, next) => {
+//   if (!req.cookies) {
+//     res.status(401).send({
+//       message: "Wrong Token",
+//     });
+//     return;
+//   }
+//   jwt.verify(
+//     req.cookies,
+//     "hIHkthjUhuvfhuiyvnjy7yii9trefhon",
+//     (err, decodeData) => {
+//       if (!err) {
+//         console.log("hellollo");
+//         const issueDate = decodeData.iat * 1000;
+//         const nowDate = new Date().getTime();
+//         const diff = nowDate - issueDate; // 86400,000
+//         console.log(diff);
+//         if (diff > 300000) {
+//           res.status(401).send({
+//             message: "Token Expired",
+//           });
+//         } else {
+//           var token = jwt.sign(
+//             {
+//               id: decodeData.id,
+//               email: decodeData.email,
+//               password: decodeData.password,
+//             },
+//             "hIHkthjUhuvfhuiyvnjy7yii9trefhon"
+//           );
+//           res.cookie("jToken", token, {
+//             maxAge: 86_400_000,
+//             httpOnly: true,
+//           });
+//           req.body.jToken = decodeData;
+//           next();
+//         }
+//       } else {
+//         res.status(401).send({
+//           message: "invalid token",
+//         });
+//       }
+//     }
+//   );
+// });
 
 // Making  The Admission POST Request For Adding Student
 
@@ -250,6 +250,7 @@ app.get("/signupdata", (req, res) => {
     } else {
       // Sending Data to the Front End
       res.send(data);
+      console.log(data)
     }
   });
 });

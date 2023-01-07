@@ -39,18 +39,41 @@ function getData() {
   };
 }
 getData();
+// function delete_data(id) {
+//   console.log(id);
+//   axios
+//     .delete(`http://localhost:3000/delete/${id}`)
+//     .then((response) => {
+//       // setInterval(() => {
+//         window.location.reload();
+//       // }, 2000);
+//     })
+//     .catch((err) => {
+//       alert(err);
+//     });
+// }
+
 function delete_data(id) {
-  console.log(id);
-  axios
-    .delete(`http://localhost:3000/delete/${id}`)
-    .then((response) => {
-      // setInterval(() => {
-        window.location.reload();
-      // }, 2000);
-    })
-    .catch((err) => {
-      alert(err);
-    });
+  const url = "http://localhost:3000";
+  const Http = new XMLHttpRequest();
+  Http.open("DELETE", url + `/delete/${id}`);
+  Http.setRequestHeader("Content-Type", "application/json");
+  Http.send(null);
+  Http.onreadystatechange = (e) => {
+    console.log(e);
+    if (Http.readyState === 4) {
+      if (Http.status === 200) {
+        let jsonRes = JSON.parse(Http.responseText);
+        alert(jsonRes.message);
+        window.location.reload()
+      } else {
+        let jsonRes = JSON.parse(Http.responseText);
+        alert(jsonRes.message);
+      }
+    }
+  };
+
+  return false;
 }
 
 function getting_data(_id, username, phone, email) {
@@ -67,28 +90,29 @@ function getting_data(_id, username, phone, email) {
   `;
 }
 function updating_data(id) {
-  console.log("helll");
-  const username = document.getElementById(`${id}-username`).value;
-  const email = document.getElementById(`${id}-email`).value;
-  const phone = document.getElementById(`${id}-phone`).value;
-  console.log(username);
-  console.log(email);
-  console.log(phone);
-  console.log(id)
-  axios
-    .put(`http://localhost:3000/update/${id}`, {
-      username: username,
-      email: email,
-      phone: phone,
-    })
-    .then((reponse) => {
-      // alert(reponse.data.message);
-      // setInterval(() => {
-        window.location.reload();
-      // }, 2000);
-      // console.log(reponse);
-    })
-    .catch((err) => {
-      alert(err);
-    });
+  const url = "http://localhost:3000";
+  const Http = new XMLHttpRequest();
+  Http.open("PUT", url + `/update/${id}`);
+  Http.setRequestHeader("Content-Type", "application/json");
+  let obj = {
+   username : document.getElementById(`${id}-username`).value,
+   email : document.getElementById(`${id}-email`).value,
+   phone : document.getElementById(`${id}-phone`).value,
+  };
+  Http.send(JSON.stringify(obj));
+  Http.onreadystatechange = (e) => {
+    console.log(e);
+    if (Http.readyState === 4) {
+      if (Http.status === 200) {
+        let jsonRes = JSON.parse(Http.responseText);
+        alert(jsonRes.message);
+        window.location.reload()
+      } else {
+        let jsonRes = JSON.parse(Http.responseText);
+        alert(jsonRes.message);
+      }
+    }
+  };
+
+  return false;
 }
