@@ -55,6 +55,11 @@ function toggleMenu() {
   console.log("ello");
   subMenu.classList.toggle("open-wrap");
 }
+let menu = document.getElementById("menu");
+function toggleinMenu() {
+  console.log("ello");
+  menu.classList.toggle("open-menu");
+}
 
 function logout() {
   const Http = new XMLHttpRequest();
@@ -65,7 +70,8 @@ function logout() {
     console.log(e);
     if (Http.readyState === 4) {
       let jsonRes = JSON.parse(Http.responseText);
-      console.log(jsonRes)
+      console.log(jsonRes);
     }
   };
 }
+

@@ -16,76 +16,104 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
   <div class="nav">
     <div class="logo">
       <h1>
-        Syed Tarique Ahmed
+        SyedTariqueAhmed. <i class="fa-solid fa-bars" onclick="toggleinMenu()"></i>
       </h1>
     </div>
-    <div class="nav-links">
-      <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#course">COURSES</a></li>
-        <li><a href="#teacher">TEACHER</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-      </ul>
-    </div>
-    <div class="buttons">
-      <a href="../Register/register.html">Admisson</a>
-    </div>
-    <div class="user">
-      <img src="./images/user.png" onclick="toggleMenu()" alt="">
-    </div>
-    <div class="sub-menu-wrap" id="sub">
-      <div class="sub-menu">
-        <div class="user-info">
-          <img src="./images/user.png" alt="">
-          <h1 id="username">Kashan Adnan</h1>
+    <div class="menu" id="menu">
+      <div class="nav-links">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#course">COURSES</a></li>
+          <li><a href="#teacher">TEACHER</a></li>
+          <li><a href="#pricing">PRICING</a></li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <a href="../Register/register.html">Admisson</a>
+      </div>
+      <div class="user">
+        <img src="./images/user.png" onclick="toggleMenu()" alt="">
+      </div>
+      <div class="sub-menu-wrap" id="sub">
+        <div class="sub-menu">
+          <div class="user-info">
+            <img src="./images/user.png" alt="">
+            <h1 id="username">Kashan Adnan</h1>
 
+          </div>
+          <hr />
+          <a href="./profile.html" class="sub-menu-links">
+            <img src="./images/profile.png" alt="profile">
+            <p>Edit Profile</p>
+            <span>></span>
+          </a>
+          <a href="#" class="sub-menu-links">
+            <img src="./images/setting.png" alt="profile">
+            <p>Settings & Privacy</p>
+            <span>></span>
+          </a>
+          <a href="#" class="sub-menu-links">
+            <img src="./images/help.png" alt="help">
+            <p>Help & Support</p>
+            <span>></span>
+          </a>
+          <a href="#" class="sub-menu-links" onclick="logout()">
+            <img src="./images/logout.png" alt="profile">
+            <p>Logout</p>
+            <span>></span>
+          </a>
         </div>
-        <hr />
-        <a href="./profile.html" class="sub-menu-links">
-          <img src="./images/profile.png" alt="profile">
-          <p>Edit Profile</p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-links">
-          <img src="./images/setting.png" alt="profile">
-          <p>Settings & Privacy</p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-links">
-          <img src="./images/help.png" alt="help">
-          <p>Help & Support</p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-links" onclick="logout()">
-          <img src="./images/logout.png" alt="profile">
-          <p>Logout</p>
-          <span>></span>
-        </a>
       </div>
     </div>
+
   </div>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="content-of-main">
-          <div class="image"></div>
+        <div class="content-of-main" id="home">
+          <div class="image">
+            <h1>The Best Speaking Course <br> &ensp; &ensp; &ensp; In Our Society</h1>
+            <p>Worried about your immigration or study visa? Need sufficient bands! Don't worry anymore, I am here to
+              help you
+              Get your desired bands with in two months...
+              Our many students have already achieved their desired bands and well satisfied....
+              Be next one.....</p>
+            <button>Explore More !</button>
+          </div>
         </div>
       </div>
       <div class="carousel-item">
         <div class="content-of-main">
-          <div class="image"></div>
+          <div class="image">
+            <h1>The Best Speaking Course <br> &ensp; &ensp; &ensp; In Our Society</h1>
+            <p>Worried about your immigration or study visa? Need sufficient bands! Don't worry anymore, I am here to
+              help you
+              Get your desired bands with in two months...
+              Our many students have already achieved their desired bands and well satisfied....
+              Be next one.....</p>
+            <button>Explore More !</button>
+          </div>
         </div>
       </div>
       <div class="carousel-item">
         <div class="content-of-main">
-          <div class="image"></div>
+          <div class="image">
+            <h1>The Best Speaking Course <br> &ensp; &ensp; &ensp; In Our Society</h1>
+            <p>Worried about your immigration or study visa? Need sufficient bands! Don't worry anymore, I am here to
+              help you
+              Get your desired bands with in two months...
+              Our many students have already achieved their desired bands and well satisfied....
+              Be next one.....</p>
+            <button>Explore More !</button>
+          </div>
         </div>
       </div>
     </div>
@@ -98,8 +126,481 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div class="course-heading" id="course">
+    <h1>Our Best Courses</h1>
+  </div>
+  <section class="courses">
 
+    <div class="course-card">
+      <h1>Basic Level</h1>
+      <p>If you have tried to learn English but couldn't get so this is the time to join my beginners level and you will
+        be able to speak English like beginners and you can feel the changes in your confidenc.
+        Just join my beginners level level and feel the difference!</p>
+    </div>
+    <div class="course-card">
+      <h1>Mid Level</h1>
+      <p>If you can speak and understand English reasonably well and can use basic tenses and structures but have
+        problems with more complex grammar and vocabulary
+        So,it is the time to join my intermediate level class and you will be able to speak English like intermediate
+        level students.</p>
+    </div>
+    <div class="course-card">
+      <h1>Advance Level</h1>
+      <p>If you can speak and understand very well but sometimes have problems with unfamiliar situations and vocabulary
+        If you speak and understand well but still make mistakes and sometimes people do not understand you clearly
+        It's the to join my advanced level class and you can feel the difference after completing this level!</p>
+    </div>
+    <div class="course-card">
+      <h1>Talking Class</h1>
+      <p>If you understand and write English Well and unable to speak English confidently and fluently due to hesitation
+        It's the time to join 1to 1 my conversation class and you will be able to speak English fluently and confidently
+        in no timew</p>
+    </div>
+    <div class="course-card">
+      <h1>TOEFL Course</h1>
+      <p>Worried about your immigration or study visa? Need sufficient bands! Don't worry anymore, I am here to help you
+        Get your desired bands with in two months...
+        Our many students have already achieved their desired bands and well satisfied....
+        Be next </p>
+    </div>
+    <div class="course-card">
+      <h1>IELTS Course</h1>
+      <p>Worried about your immigration or study visa? Need sufficient bands! Don't worry anymore, I am here to help you
+        Get your desired bands with in two months...
+        Our many students have already achieved their desired bands and well satisfied....
+        Be next</p>
+    </div>
+  </section>
+  <section class="teachers" id="teacher">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <h1 class="teachers-heading">Our Best Teachers</h1>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-container">
+            <div class="testimonials">
+              <div class="inner">
+                <img src="./images/6.jpg" alt="1person">
+                <div class="test-row">
+                  <div class="tes-col">
+                    <div class="testimonial">
+                      <div class="name">Syed Tariq Ahmed</div>
+                      <p> Hi, everyone, I'm your ESL Teacher SYED TARIQUE AHMED! I'm here to help you develop your
+                        English speaking skills. Guaranteed, that I will be of great assistance. I'll make our class as
+                        lively as possible.
+                        I have done my masters degree in TEFL ( teaching of English as a foreign language).
+                        I have been teaching English successfully for 15 years.
+                        During COVID-19 , I started teaching English online before I had been teaching in my own English
+                        language centre named Pak American communicate centre.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-container">
+            <div class="testimonials">
+              <div class="inner">
+                <img src="./images/4.jpg" alt="1person">
+                <div class="test-row">
+                  <div class="tes-col">
+                    <div class="testimonial">
+                      <div class="name">Syed Tariq Ahmed</div>
+                      <p> Hi, everyone, I'm your ESL Teacher SYED TARIQUE AHMED! I'm here to help you develop your
+                        English speaking skills. Guaranteed, that I will be of great assistance. I'll make our class as
+                        lively as possible.
+                        I have done my masters degree in TEFL ( teaching of English as a foreign language).
+                        I have been teaching English successfully for 15 years.
+                        During COVID-19 , I started teaching English online before I had been teaching in my own English
+                        language centre named Pak American communicate centre.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-container">
+            <div class="testimonials">
+              <div class="inner">
+                <img src="./images/2.jpg" alt="1person">
+                <div class="test-row">
+                  <div class="tes-col">
+                    <div class="testimonial">
+                      <div class="name">Syed Tariq Ahmed</div>
+                      <p> Hi, everyone, I'm your ESL Teacher SYED TARIQUE AHMED! I'm here to help you develop your
+                        English speaking skills. Guaranteed, that I will be of great assistance. I'll make our class as
+                        lively as possible.
+                        I have done my masters degree in TEFL ( teaching of English as a foreign language).
+                        I have been teaching English successfully for 15 years.
+                        During COVID-19 , I started teaching English online before I had been teaching in my own English
+                        language centre named Pak American communicate centre.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <section class="description">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-interval="3000">
+      <div class="carousel-inner" id="showdata">
+        <div class="carousel-item active">
+
+          <div class="box">
+
+            <div class="square">
+              <div class="borders">
+                <div class="logo">
+                </div>
+                <div class="border-radiuse-2">
+                  <div class="blue-top"></div>
+                  <div class="white-top"></div>
+                </div>
+                <div class="content-of-description">
+                  <i class="fa-solid fa-quote-left"></i>
+                  <h1><q id="heading">Assalamualikum Students</q></h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ab aperiam repellat natus
+                    necessitatibus fuga, ipsum, qui en</p>
+                  <h3>2023-01-01T14:45</h3>
+                </div>
+                <div class="border-radiuse-2">
+                  <div class="blue"></div>
+                  <div class="white"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <section class="pricings" id="pricing">
+    <div class="pricing">
+      <div class="first-head">
+        <div class="icon">
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <div class="heading">
+          <h1>Basic Level</h1>
+        </div>
+        <div class="price">
+          <sup>$</sup>20
+        </div>
+      </div>
+      <div class="main-pricing-area">
+        <ul>
+          <li>Speaking</li>
+          <li>IELTS</li>
+          <li>BOOTSTRAP</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>MongoDB</li>
+          <li>Server</li>
+          <li>Express</li>
+          <li>Nodejs</li>
+        </ul>
+        <button>Select</button>
+      </div>
+    </div>
+    <div class="pricing" id="active">
+      <div class="first-head">
+        <div class="icon">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+        <div class="heading">
+          <h1>Mid Level</h1>
+        </div>
+        <div class="price">
+          <sup>$</sup>20
+        </div>
+      </div>
+      <div class="main-pricing-area">
+        <ul>
+          <li>Speaking</li>
+          <li>IELTS</li>
+          <li>BOOTSTRAP</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>MongoDB</li>
+          <li>Server</li>
+          <li>Express</li>
+          <li>Nodejs</li>
+        </ul>
+        <button>Select</button>
+      </div>
+    </div>
+    <div class="pricing">
+      <div class="first-head">
+        <div class="icon">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <div class="heading">
+          <h1>Advance Level</h1>
+        </div>
+        <div class="price">
+          <sup>$</sup>20
+        </div>
+      </div>
+      <div class="main-pricing-area">
+        <ul>
+          <li>Speaking</li>
+          <li>IELTS</li>
+          <li>BOOTSTRAP</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>MongoDB</li>
+          <li>Server</li>
+          <li>Express</li>
+          <li>Nodejs</li>
+        </ul>
+        <button>Select</button>
+      </div>
+    </div>
+  </section>
+  <h1 class="testimonial-heading">Our Testimonial</h1>
+  <section class="testimonail">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <i class="fa-solid fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsa quos nemo! Neque enim repudiandae
+                minus
+                praesentium, culpa nobis cum. Soluta, architecto, dicta praesentium similique maxime itaque, quidem
+                dolores inventore officia deserunt quas culpa.</p>
+              <div class="detail">
+                <div class="imgBx">
+                  <img src="./images/3.jpg">
+                </div>
+                <h3>Someone Famoys<br /><span>Creatrive </span></h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <i class="fa-solid fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsa quos nemo! Neque enim repudiandae
+                minus
+                praesentium, culpa nobis cum. Soluta, architecto, dicta praesentium similique maxime itaque, quidem
+                dolores inventore officia deserunt quas culpa.</p>
+              <div class="detail">
+                <div class="imgBx">
+                  <img src="./images/4.jpg">
+                </div>
+                <h3>Someone Famoys<br /><span>Creatrive </span></h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <i class="fa-solid fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsa quos nemo! Neque enim repudiandae
+                minus
+                praesentium, culpa nobis cum. Soluta, architecto, dicta praesentium similique maxime itaque, quidem
+                dolores inventore officia deserunt quas culpa.</p>
+              <div class="detail">
+                <div class="imgBx">
+                  <img src="./images/5.jpg">
+                </div>
+                <h3>Someone Famoys<br /><span>Creatrive </span></h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <i class="fa-solid fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsa quos nemo! Neque enim repudiandae
+                minus
+                praesentium, culpa nobis cum. Soluta, architecto, dicta praesentium similique maxime itaque, quidem
+                dolores inventore officia deserunt quas culpa.</p>
+              <div class="detail">
+                <div class="imgBx">
+                  <img src="./images/6.jpg">
+                </div>
+                <h3>Someone Famoys<br /><span>Creatrive </span></h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <i class="fa-solid fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsa quos nemo! Neque enim repudiandae
+                minus
+                praesentium, culpa nobis cum. Soluta, architecto, dicta praesentium similique maxime itaque, quidem
+                dolores inventore officia deserunt quas culpa.</p>
+              <div class="detail">
+                <div class="imgBx">
+                  <img src="./images/2.jpg">
+                </div>
+                <h3>Someone Famoys<br /><span>Creatrive </span></h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <i class="fa-solid fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ipsa quos nemo! Neque enim repudiandae
+                minus
+                praesentium, culpa nobis cum. Soluta, architecto, dicta praesentium similique maxime itaque, quidem
+                dolores inventore officia deserunt quas culpa.</p>
+              <div class="detail">
+                <div class="imgBx">
+                  <img src="./images/1.jpg">
+                </div>
+                <h3>Someone Famoys<br /><span>Creatrive </span></h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <div class="contact-section">
+    <section class="contact">
+      <div class="contactinfo">
+        <div>
+          <h2>Contact Info</h2>
+          <ul class="info">
+            <li><span><i class="fa-solid fa-location-dot"></i></span>
+              <span>2913 Islamabad Road
+                , Los Sentos,
+                CA
+              </span></li>
+            <li><span><i class="fa-solid fa-envelope"></i></span>
+              <span>syedtariqahmed@gmail.com</span></li>
+            <li><span><i class="fa-solid fa-phone"></i></span>
+              <span>03456276164</span></li>
+          </ul>
+        </div>
+        <ul class="sci">
+          <li><i class="fa-brands fa-facebook-f"></i></li>
+          <li><i class="fa-brands fa-twitter"></i></li>
+          <li><i class="fa-brands fa-instagram"></i></li>
+          <li><i class="fa-brands fa-pinterest"></i></li>
+          <li><i class="fa-brands fa-linkedin"></i></li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <h2>Send a Message </h2>
+        <div class="formBox">
+          <div class="inputBx w50">
+            <input type="text" id="name" required>
+            <span>First Name</span>
+          </div>
+          <div class="inputBx w50">
+            <input type="text" id="name" required>
+            <span>Last Name</span>
+          </div>
+          <div class="inputBx w50">
+            <input type="text" id="name" required>
+            <span>Email Address</span>
+          </div>
+          <div class="inputBx w50">
+            <input type="text" id="name" required>
+            <span>Mobile Number</span>
+          </div>
+          <div class="inputBx w100">
+            <textarea type="text" id="name" required></textarea>
+            <span>Message</span>
+          </div>
+          <div class="inputBx w100">
+            <input type="submit" name="" id="Submit" onclick="contact()" value="Submit">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icons">
+      <li><a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="https://www.facebook.com"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="https://www.facebook.com"><i class="fa-brands fa-twitter"></i></a></li>
+      <li><a href="https://www.facebook.com"><i class="fa-brands fa-linkedin"></i></a></li>
+    </ul>
+    <ul class="footer-menu">
+      <li><a href="">HOME</a></li>
+      <li><a href="">COURSES</a></li>
+      <li><a href="">PRICING</a></li>
+      <li><a href="">TEACHERS</a></li>
+    </ul>
+    <p>&copy; 2023 SyedTariqAhmed | All Right Reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true,
+    },
+    loop: true
+  });
+</script>
 <script src="./script.js">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
