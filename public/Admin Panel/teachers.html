@@ -23,11 +23,10 @@
             <h2>Syed Tariq Ahmed</h2>
             <div class="sidebar-menu">
                 <ul>
-                    <li><a href="./index.html"><span
-                                class="las la-igloo"></span>Dashboard<span></span></a></li>
-                    <li><a href="./student.html" ><span class="las la-users"></span>Students<span></span></a></li>
-                    <li><a href="./desc.html"  class="active"><i class="fa-solid fa-paper-plane"></i>Description<span></span></a></li>
-                    <li><a href="./teachers.html"><span class="las la-users"></span>Teachers<span></span></a></li>
+                    <li><a href="./index.html"><span class="las la-igloo"></span>Dashboard<span></span></a></li>
+                    <li><a href="./student.html"><span class="las la-users"></span>Students<span></span></a></li>
+                    <li><a href="./desc.html"><i class="fa-solid fa-paper-plane"></i>Description<span></span></a></li>
+                    <li><a href="#" class="active"><span class="las la-users"></span>Teachers<span></span></a></li>
                 </ul>
             </div>
         </div>
@@ -55,21 +54,28 @@
             </div>
         </header>
         <main>
+
             <div class="recent-grid">
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Class Description</h2>
-
+                            <h2>Teachers</h2>
                         </div>
                         <div class="card-body">
-                            <form action="">
-                                <input   class="inputBox" type="text" name="" id="desc" placeholder="Enter Your Description Heading">
-                                <textarea  class="inputBox" type="datetime-local" row="30" cols="10" name="" id="paradesc"
-                                    placeholder="Enter Your Class Description Paragraph"></textarea>
-                                <input class="inputBox"  type="datetime-local" name="" id="date">
-                                <button onclick="return sendDescription()" class="button">Send Description</button>
-                            </form>
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                    <td>Sn.o</td>
+                                    <td>Teacher Name </td>
+                                    <td>Email</td>
+                                    <td>Delete</td>
+                                    <td>Update</td>
+                                </tr>
+                                </thead>
+                                <tbody id="showdata">
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -77,7 +83,8 @@
         </main>
     </div>
     </div>
+    <script src="./teachers.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
-<script src="desc.js"></script>
 
 </html>

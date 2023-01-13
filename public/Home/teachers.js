@@ -1,15 +1,22 @@
 var port = "http://localhost:3000";
 
 function sinup() {
+    var teachobj = {
+      teachusername: document.getElementById("techusername").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      confPassword: document.getElementById("confPassword").value,
+    };
+    console.log(teachobj);
   var obj = {
+    teachusername: document.getElementById("techusername").value,
     email: document.getElementById("email").value,
-    username: document.getElementById("username").value,
-    phone: document.getElementById("phone").value,
     password: document.getElementById("password").value,
-    confPassword: document.getElementById("confirm-password").value,
+    confPassword: document.getElementById("confPassword").value,
   };
+  console.log(obj);
   var Http = new XMLHttpRequest();
-  Http.open("POST", port + "/signUp");
+  Http.open("POST", port + "/Teachers");
   Http.setRequestHeader("Content-Type", "application/json");
   Http.send(JSON.stringify(obj));
   Http.onreadystatechange = (e) => {
@@ -17,14 +24,11 @@ function sinup() {
       let jsonRes = JSON.parse(Http.responseText);
       if (Http.status === 200) {
         console.log(jsonRes);
-        swal("Good job!", jsonRes.message, "success");
-        setInterval(function () {
-          window.location.href = "../Home/home.html";
-        }, 3000);
+        alert(jsonRes.message);
         console.log(jsonRes);
         return;
       } else {
-        swal("Opps!", jsonRes.message, "error");
+        alert(jsonRes.message);
         console.log(jsonRes.message);
       }
     }

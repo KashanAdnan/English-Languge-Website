@@ -3,7 +3,7 @@ const url = "http://localhost:3000";
 function getData() {
   var showdata = document.getElementById("showdata");
   const Http = new XMLHttpRequest();
-  Http.open("GET", url + "/signupdata");
+  Http.open("GET", url + "/teacherdata");
   Http.setRequestHeader("Content-Type", "application/json");
   Http.send(null);
   Http.onreadystatechange = (e) => {
@@ -20,20 +20,16 @@ function getData() {
     <tbody>
     <tr id="${data._id}">
     <td>${i++}</td>
-    <td>${data.stDname}</td>
+    <td>${data.teachusername}</td>
                         <td>${data.email}</td>
-                        <td>${data.adress}</td>
-                        <td><a href="tel:${data.contactno}">${
-          data.contactno
-        }</a></td>
                         <td><button class="buttons" href="javascript:void(0)" onclick="delete_data('${
                           data._id
                         }')"><i class="fa-solid fa-trash-can"></i></button></td>
                         <td><button class="buttons-blue" href="javascript:void(0)" onclick="getting_data('${
                           data._id
-                        }' , '${data.stDname}' , '${data.contactno}', '${
+                        }' , '${data.teachusername}', '${
           data.email
-        }', '${data.adress}')"><i class="fa-solid fa-pencil"></i></button></td>
+        }')"><i class="fa-solid fa-pencil"></i></button></td>
         </tr>
         </tbody>
         `;
@@ -46,7 +42,7 @@ getData();
 function delete_data(id) {
   console.log(id);
   axios
-    .delete(`http://localhost:3000/admidelete/${id}`)
+    .delete(`http://localhost:3000/teachdelete/${id}`)
     .then((response) => {
       // setInterval(() => {
         window.location.reload();
@@ -57,16 +53,14 @@ function delete_data(id) {
     });
 }
 
-function getting_data(_id, stDname, contactno, email , adress) {
+function getting_data(_id, teachusername, email ) {
   console.log(_id);
   document.getElementById(_id).innerHTML = `
   <tr id='${_id}'>
   <td>1</td>
-  <td><input type='text' class='stDname' id='${_id}-stDname' value='${stDname}' width='40'></td>
+  <td><input type='text' class='stDname' id='${_id}-stDname' value='${teachusername}' width='40'></td>
   <td><input type='text' class='email'  id='${_id}-email'value='${email}' width='40'></td>
-  <td><input type='text' class='adress' id='${_id}-adress' value='${adress}' width='40'></td>
-  <td><input type='text' class='contactno' id='${_id}-contactno' value='${contactno}' width='40'></td>
-  <td><button class="buttons" href="javascript:void(0)" onclick="delete_data('${_id}')"><i class="fa-solid fa-trash-can"></i></button></td>
+    <td><button class="buttons" href="javascript:void(0)" onclick="delete_data('${_id}')"><i class="fa-solid fa-trash-can"></i></button></td>
   <td><button class="buttons-blue" href="javascript:void(0)" onclick="updating_data('${_id}')"><i class="fa-solid fa-pencil"></i></button></td>
   </tr>
   `;
@@ -101,13 +95,11 @@ function getting_data(_id, stDname, contactno, email , adress) {
 function updating_data(id) {
   const url = "http://localhost:3000";
   const Http = new XMLHttpRequest();
-  Http.open("PUT", url + `/admiupdate/${id}`);
+  Http.open("PUT", url + `/teachupdate/${id}`);
   Http.setRequestHeader("Content-Type", "application/json");
   let obj = {
-     stDname : document.getElementById(`${id}-stDname`).value,
+     username : document.getElementById(`${id}-stDname`).value,
      email : document.getElementById(`${id}-email`).value,
-     contactno : document.getElementById(`${id}-contactno`).value,
-     adress : document.getElementById(`${id}-adress`).value,
   };
   Http.send(JSON.stringify(obj));
   Http.onreadystatechange = (e) => {

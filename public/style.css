@@ -308,146 +308,125 @@ body {
 
 footer {
     position: relative;
-    width: 100%;
-    height: auto;
-    padding: 50px 100px;
-    background-color: rgb(104, 104, 255);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-family: 'Poppins';
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    border-top-left-radius: 100px;
-}
-
-footer .footer-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-footer .footer-container .sec {
-    margin-right: 30px;
-}
-
-footer .footer-container .aboutus {
-    width: 40%;
-}
-
-footer h2 {
-    position: relative;
-    color: #D6E4E5;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-footer h2::before {
-    content: ' ';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background-color: rgb(255, 139, 139);
-}
-
-footer .footer-container .aboutus p {
-    color: #EFF5F5;
-}
-
-footer .sci {
-    margin-top: 20px;
-    display: flex;
-    margin-left: -30px;
-}
-
-footer .sci li {
-    list-style-type: none;
-}
-
-footer .sci li a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #EFF5F5;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-footer .sci li a .fa-brands {
-    /* color: #497174; */
-    font-size: 20px;
-}
-
-footer .quickLinks {
+    width: 100%;
+    background-color: #3586ff;
+    min-height: 200px;
+    padding: 20px 50px;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  
+  footer .social-icons,
+  footer .footer-menu {
     position: relative;
-    width: 25%;
-}
-
-footer .quickLinks ul {
-    margin-left: -30px;
-}
-
-footer .quickLinks ul li {
-    list-style-type: none;
-}
-
-footer .quickLinks ul li a {
-    color: #EFF5F5;
-    text-decoration: none;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-footer .quickLinks ul li a:hover {
-    color: #fff;
-}
-
-footer .contacting {
-    width: calc(35% - 60px);
-    margin-right: 0 !important;
-}
-
-footer .contacting .info {
-    position: relative;
-    margin-left: -30px;
-}
-
-footer .contacting .info li {
     display: flex;
-    margin-bottom: 16px;
-}
-
-footer .contacting .info li span:nth-child(1) {
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 !important;
+    flex-wrap: wrap;
+  }
+  
+  footer .social-icons li,
+  footer .footer-menu li {
+    list-style: none;
+  }
+  
+  footer .social-icons li a {
+    font-size: 2em;
     color: #fff;
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-footer .contacting .info li span {
-    color: #EFF5F5;
-}
-
-footer .contacting .info li span a {
-    color: #EFF5F5;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
     text-decoration: none;
-}
-
-footer .contacting .info li span a:hover {
+  }
+  
+  footer .social-icons li a:hover {
+    transform: translateY(-10px);
+  }
+  
+  footer .footer-menu li a {
+    font-size: 1em;
     color: #fff;
-}
-
-footer .heading {
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.2s;
+  }
+  
+  footer .footer-menu li a:hover {
+    opacity: 1;
+  }
+  
+  footer p {
+    color: #fff;
     text-align: center;
-    font-size: 40px;
-    font-weight: 300;
-}
-
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("./images/wave.png");
+    background-size: 1000px 100px;
+  }
+  
+  footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+  }
+  
+  footer .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+  }
+  
+  footer .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave_03 3s linear infinite;
+  }
+  
+  footer .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_04 3s linear infinite;
+  }
+  
+  @keyframes animateWave {
+    0% {
+      background-position-x: 1000px;
+    }
+  
+    100% {
+      background-position-x: 0px;
+    }
+  
+  }
+  
+  @keyframes animateWave_02 {
+    0% {
+      background-position-x: 0px;
+    }
+  
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+  
 
 @media (max-width : 700px) {
     .nav {

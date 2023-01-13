@@ -11,17 +11,18 @@ function getData() {
       let jsonRes = JSON.parse(Http.responseText);
       let out;
       var i = 1;
+console.log(jsonRes)
+var arr =[]
+console.log(arr.length)
       jsonRes.map((data) => {
-        console.log(data)
+        console.log(data);
         out = `
     <tbody>
     <tr id="${data._id}">
     <td>${i++}</td>
     <td>${data.username}</td>
                         <td>${data.email}</td>
-                        <td><a href="tel:${data.phone}">${
-          data.phone
-        }</a></td>
+                        <td><a href="tel:${data.phone}">${data.phone}</a></td>
                         <td><button class="buttons" href="javascript:void(0)" onclick="delete_data('${
                           data._id
                         }')"><i class="fa-solid fa-trash-can"></i></button></td>
@@ -65,7 +66,7 @@ function delete_data(id) {
       if (Http.status === 200) {
         let jsonRes = JSON.parse(Http.responseText);
         alert(jsonRes.message);
-        window.location.reload()
+        window.location.reload();
       } else {
         let jsonRes = JSON.parse(Http.responseText);
         alert(jsonRes.message);
@@ -95,9 +96,9 @@ function updating_data(id) {
   Http.open("PUT", url + `/update/${id}`);
   Http.setRequestHeader("Content-Type", "application/json");
   let obj = {
-   username : document.getElementById(`${id}-username`).value,
-   email : document.getElementById(`${id}-email`).value,
-   phone : document.getElementById(`${id}-phone`).value,
+    username: document.getElementById(`${id}-username`).value,
+    email: document.getElementById(`${id}-email`).value,
+    phone: document.getElementById(`${id}-phone`).value,
   };
   Http.send(JSON.stringify(obj));
   Http.onreadystatechange = (e) => {
@@ -106,7 +107,7 @@ function updating_data(id) {
       if (Http.status === 200) {
         let jsonRes = JSON.parse(Http.responseText);
         alert(jsonRes.message);
-        window.location.reload()
+        window.location.reload();
       } else {
         let jsonRes = JSON.parse(Http.responseText);
         alert(jsonRes.message);

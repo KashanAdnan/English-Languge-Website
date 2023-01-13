@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers Section | SyedTariqueAhmed.</title>
+    <link rel="stylesheet" href="techerstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <h1>
+                SyedTariqueAhmed. 
+            </h1>
+        </div>
+        <div class="menu" id="menu">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#course">COURSES</a></li>
+                    <li><a href="#teacher">TEACHER</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <a href="./teachers.html">Be A Teacher</a>
+                <a href="../Register/register.html">Admisson</a>
+            </div>
+            <div class="user">
+                <img src="./images/user.png" onclick="toggleMenu()" alt="">
+            </div>
+            <div class="sub-menu-wrap" id="sub">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="./images/user.png" alt="">
+                        <h1 id="username">Kashan Adnan</h1>
+
+                    </div>
+                    <hr />
+                    <a href="./profile.html" class="sub-menu-links">
+                        <img src="./images/profile.png" alt="profile">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-links">
+                        <img src="./images/setting.png" alt="profile">
+                        <p>Settings & Privacy</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-links">
+                        <img src="./images/help.png" alt="help">
+                        <p>Help & Support</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-links">
+                        <img src="./images/logout.png" alt="profile">
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="teachers">
+        <div class="teachersform">
+            <div class="image">
+                <img src="./images/tacher.jpg" alt="">
+            </div>
+            <form>
+                <h1>Teachers Only Form</h1>
+                <input id="techusername" type="text" ><br />
+                <input id="email" type="text" placeholder="Enter Your Emai-ID "><br />
+                <input id="password" type="password" placeholder="Enter Your Password"><br />
+                <input id="confPassword" type="password" placeholder="Enter Your Confirm Password"><br />
+                <button type="submit" onclick="return sinup()">Submit</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icons">
+            <li><a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.facebook.com"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+        <ul class="footer-menu">
+            <li><a href="">HOME</a></li>
+            <li><a href="">COURSES</a></li>
+            <li><a href="">PRICING</a></li>
+            <li><a href="">TEACHERS</a></li>
+        </ul>
+        <p>&copy; 2023 SyedTariqAhmed | All Right Reserved</p>
+    </footer>
+
+    <script src="./teachers.js"></script>
+</body>
+
+</html>

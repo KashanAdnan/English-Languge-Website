@@ -11,6 +11,7 @@ const jwt = require("jsonwebtoken");
 const { SignUpUserModel } = require("./Database/signupdatabase");
 const { AdmissionUserModel } = require("./Database/admissiondatbase");
 const { DescModel } = require("./Database/descdatabase");
+const { TeachersUserModel } = require("./Database/teachers");
 
 // Calling express
 const app = express();
@@ -249,7 +250,20 @@ app.get("/signupdata", (req, res) => {
     } else {
       // Sending Data to the Front End
       res.send(data);
-      console.log(data)
+      console.log(data);
+    }
+  });
+});
+app.get("/teacherdata", (req, res) => {
+  // Finding all DATA from Database
+  const data = TeachersUserModel.find({}, (err, data) => {
+    if (err) {
+      // Sending Error If error
+      res.send(err);
+    } else {
+      // Sending Data to the Front End
+      res.send(data);
+      console.log(data);
     }
   });
 });
@@ -258,6 +272,20 @@ app.get("/signupdata", (req, res) => {
 
 app.delete("/delete/:id", (req, res) => {
   SignUpUserModel.findByIdAndRemove(req.params.id, (err, data) => {
+    if (!err) {
+      res.status(200).send({
+        message: "Refresh Your Page !",
+      });
+    } else {
+      res.status(500).send({
+        message: "error",
+        err,
+      });
+    }
+  });
+});
+app.delete("/teachdelete/:id", (req, res) => {
+  TeachersUserModel.findByIdAndRemove(req.params.id, (err, data) => {
     if (!err) {
       res.status(200).send({
         message: "Refresh Your Page !",
@@ -279,6 +307,28 @@ app.put("/update/:id", (req, res) => {
         username: req.body.username,
         email: req.body.email,
         phone: req.body.phone,
+      },
+    }
+  )
+    .then((data) => {
+      res.status(200).send({
+        message: "User Updated !",
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err,
+      });
+    });
+});
+
+app.put("/teachupdate/:id", (req, res) => {
+  TeachersUserModel.findOneAndUpdate(
+    { id: req.params.id },
+    {
+      $set: {
+        username: req.body.username,
+        email: req.body.email,
       },
     }
   )
@@ -357,6 +407,42 @@ app.post("/desc", (req, res, next) => {
     } else {
       res.status(405).send({
         message: "Could'nt Send Description",
+      });
+    }
+  });
+});
+
+app.post("/Teachers", (req, res, next) => {
+  TeachersUserModel.findOne({ email: req.body.email }, (err, data) => {
+    if (err || data) {
+      if (data.email === req.body.email) {
+        //Sending Message to Fornt End With Status  Of 405
+        res.status(405).send({
+          message: "User Already Exists Please Make Another Email ID !",
+        });
+      }
+    } else {
+      const newTeacherPerson = TeachersUserModel({
+        // Making The Schema for Getting All Information From The  Front  End and save it
+        teachusername: req.body.teachusername,
+        email: req.body.email,
+        password: req.body.password,
+        confPassword: req.body.confPassword,
+      });
+      // Saving Sign Up User to The Data Base
+      newTeacherPerson.save((err, data) => {
+        if (!err) {
+          //Sending Message to Fornt End With Status  Of 405
+          res.status(200).send({
+            message: "Your Form Has Been Submitted  !",
+            data,
+          });
+        } else {
+          //Sending Message to Fornt End With Status  Of 405
+          res.status(405).send({
+            message: "User creation Failed",
+          });
+        }
       });
     }
   });
