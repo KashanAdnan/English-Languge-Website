@@ -12,6 +12,7 @@ const { SignUpUserModel } = require("./Database/signupdatabase");
 const { AdmissionUserModel } = require("./Database/admissiondatbase");
 const { DescModel } = require("./Database/descdatabase");
 const { TeachersUserModel } = require("./Database/teachers");
+const { ContactUserModel } = require("./Database/contact");
 
 // Calling express
 const app = express();
@@ -267,6 +268,32 @@ app.get("/teacherdata", (req, res) => {
     }
   });
 });
+app.get("/descdata", (req, res) => {
+  // Finding all DATA from Database
+  const data = DescModel.find({}, (err, data) => {
+    if (err) {
+      // Sending Error If error
+      res.send(err);
+    } else {
+      // Sending Data to the Front End
+      res.send(data);
+      console.log(data);
+    }
+  });
+});
+app.get("/condata", (req, res) => {
+  // Finding all DATA from Database
+  const data = ContactUserModel.find({}, (err, data) => {
+    if (err) {
+      // Sending Error If error
+      res.send(err);
+    } else {
+      // Sending Data to the Front End
+      res.send(data);
+      console.log(data);
+    }
+  });
+});
 
 // Making Delete Request For Deleting data From Database
 
@@ -357,7 +384,56 @@ app.delete("/admidelete/:id", (req, res) => {
     }
   });
 });
+app.delete("/descdelete/:id", (req, res) => {
+  DescModel.findByIdAndRemove(req.params.id, (err, data) => {
+    if (!err) {
+      res.status(200).send({
+        message: "Refresh Your Page !",
+      });
+    } else {
+      res.status(500).send({
+        message: "error",
+        err,
+      });
+    }
+  });
+});
+app.delete("/condelete/:id", (req, res) => {
+  ContactUserModel.findByIdAndRemove(req.params.id, (err, data) => {
+    if (!err) {
+      res.status(200).send({
+        message: "Refresh Your Page !",
+      });
+    } else {
+      res.status(500).send({
+        message: "error",
+        err,
+      });
+    }
+  });
+});
 
+app.put("/descupdate/:id", (req, res) => {
+  DescModel.findOneAndUpdate(
+    { id: req.params.id },
+    {
+      $set: {
+        desc: req.body.desc,
+        paradesc: req.body.paradesc,
+      },
+    }
+  )
+    .then((data) => {
+      res.status(200).send({
+        message: "User Updated !",
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err,
+      });
+    });
+});
 app.put("/admiupdate/:id", (req, res) => {
   AdmissionUserModel.findOneAndUpdate(
     { id: req.params.id },
@@ -367,6 +443,28 @@ app.put("/admiupdate/:id", (req, res) => {
         email: req.body.email,
         contactno: req.body.contactno,
         adress: req.body.adress,
+      },
+    }
+  )
+    .then((data) => {
+      res.status(200).send({
+        message: "User Updated !",
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err,
+      });
+    });
+});
+app.put("/Contactupdate/:id", (req, res) => {
+  ContactUserModel.findOneAndUpdate(
+    { id: req.params.id },
+    {
+      $set: {
+        firstname: req.body.firstname,
+        email: req.body.email,
+        messgae: req.body.messgae,
       },
     }
   )
@@ -431,6 +529,41 @@ app.post("/Teachers", (req, res, next) => {
       });
       // Saving Sign Up User to The Data Base
       newTeacherPerson.save((err, data) => {
+        if (!err) {
+          //Sending Message to Fornt End With Status  Of 405
+          res.status(200).send({
+            message: "Your Form Has Been Submitted  !",
+            data,
+          });
+        } else {
+          //Sending Message to Fornt End With Status  Of 405
+          res.status(405).send({
+            message: "User creation Failed",
+          });
+        }
+      });
+    }
+  });
+});
+app.post("/contact", (req, res, next) => {
+  ContactUserModel.findOne({ email: req.body.email }, (err, data) => {
+    if (err || data) {
+      if (data.email === req.body.email) {
+        //Sending Message to Fornt End With Status  Of 405
+        res.status(405).send({
+          message: "User Already Exists Please Make Another Email ID !",
+        });
+      }
+    } else {
+      const newContactPerson = ContactUserModel({
+        // Making The Schema for Getting All Information From The  Front  End and save it
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        messgae: req.body.messgae,
+      });
+      // Saving Sign Up User to The Data Base
+      newContactPerson.save((err, data) => {
         if (!err) {
           //Sending Message to Fornt End With Status  Of 405
           res.status(200).send({

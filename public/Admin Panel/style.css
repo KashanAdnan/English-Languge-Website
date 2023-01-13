@@ -296,6 +296,12 @@ form {
     color: #35339a;
     margin-left: 20px;
 }
+.para{
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    width: 200px;
+    height: 20px;
+}
 
 a {
     text-decoration: none;

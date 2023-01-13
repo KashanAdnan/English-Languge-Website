@@ -25,13 +25,16 @@ function getData() {
         </div>
         <div class="border-radiuse-2">
         <div class="blue-top"></div>
-        <div class="white-top"></div>
+        <div class="white-top">
+        <h1>
+        Daily Quote
+      </h1></div>
         </div>
         <div class="content-of-description">
             <i class="fa-solid fa-quote-left"></i>
             <h1 style='width : 600px'><q id="heading">${data.desc}</q></h1>
             <p>${data.paradesc}</p>
-            <h3>2023-01-01T14:45</h3>
+            <h3>${data.date}</h3>
             </div>
             <div class="border-radiuse-2">
             <div class="blue"></div>
@@ -75,3 +78,29 @@ function logout() {
   };
 }
 
+function contact() {
+  const Http = new XMLHttpRequest();
+  Http.open("POST", url + "/contact");
+  Http.setRequestHeader("Content-Type", "application/json");
+  let obj = {
+    firstname: document.getElementById("name").value,
+    lastname: document.getElementById("last").value,
+    email: document.getElementById("email").value,
+    messgae: document.getElementById("mesgae").value,
+  };
+  console.log(obj)
+  Http.send(JSON.stringify(obj));
+  Http.onreadystatechange = (e) => {
+    console.log(e);
+    if (Http.readyState === 4) {
+      let jsonRes = JSON.parse(Http.responseText);
+      if (Http.status === 200) {
+        alert(jsonRes.message);
+        console.log(jsonRes);
+      } else {
+        alert(jsonRes.message);
+      }
+    }
+  };
+  console.log("hello");
+}

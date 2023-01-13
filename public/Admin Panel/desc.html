@@ -28,6 +28,7 @@
                     <li><a href="./student.html" ><span class="las la-users"></span>Students<span></span></a></li>
                     <li><a href="./desc.html"  class="active"><i class="fa-solid fa-paper-plane"></i>Description<span></span></a></li>
                     <li><a href="./teachers.html"><span class="las la-users"></span>Teachers<span></span></a></li>
+                    <li><a href="./cotact.html" class=""><span class="las la-users"></span>Contact<span></span></a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +60,7 @@
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Class Description</h2>
+                            <h2>Daily Quotes</h2>
 
                         </div>
                         <div class="card-body">
@@ -74,10 +75,37 @@
                     </div>
                 </div>
             </div>
+            <div class="recent-grid">
+
+                <div class="projects"  style="margin-top: 40px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Recents Quotes</h2>
+                        </div>
+                        <div class="card-body">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Sn.o</td>
+                                        <td>Heading </td>
+                                        <td>Paragraph</td>
+                                        <td>Delete</td>
+                                        <td>Update</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="showdata">
+                                    
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         </main>
     </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="desc.js"></script>
 
 </html>

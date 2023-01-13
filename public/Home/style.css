@@ -506,7 +506,19 @@ nav .logo h2 {
   position: absolute;
   top: -110px;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6868ff;
   right: -20px;
+}
+.white-top h1{
+  margin-top: 100px;
+  transform: rotate(45deg);
+  font-size: 25px;
+  background-color: #6868ff;
+  padding: 8px;
+  color: #fff;
 }
 
 .box {
@@ -864,7 +876,7 @@ nav .logo h2 {
   background-color: #fff;
   width: calc(100% - 150px);
   margin-left: 150px;
-  box-shadow: 0 0px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.097);
   padding-left: 250px;
   height: 100%;
 }
@@ -940,7 +952,7 @@ nav .logo h2 {
 
 .inputBx input[type="submit"] {
   border: none;
-  background-color: #007bff;
+  background-color: #6868ff;
   color: #fff;
   border-radius: 20px;
   padding: 10px 0 10px 0;
@@ -950,8 +962,8 @@ nav .logo h2 {
 }
 
 .inputBx input[type="submit"]:hover {
-  border: 1px solid #007bff;
-  color: #007bff;
+  border: 1px solid #6868ff;
+  color: #6868ff;
   background: transparent;
 }
 
@@ -1222,6 +1234,177 @@ nav .logo h2 {
     list-style: none;
     font-size: 12px;
   }
+
+  .contact-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .contact {
+    position: relative;
+    min-width: 228px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact .contactinfo {
+    position: absolute;
+    top: 40px;
+    width: 311px;
+    height: calc(100% - 80px);
+    background-color: #6868ff;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    left: -59px;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.138);
+  }
+
+  .contact {
+    position: relative;
+    min-width: 228px;
+    min-height: 627px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form h2 {
+    color: #000056;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: -204px;
+    margin-top: -45px;
+  }
+
+  footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #3586ff;
+    min-height: 200px;
+    padding: 20px 50px;
+    flex-direction: column;
+    margin-top: 951px !important;
+  }
+
+  .inputBx input,
+  .inputBx textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    margin-left: -180px;
+    resize: none;
+  }
+
+  .inputBx span {
+    position: absolute;
+    left: -220px;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    transition: 0.5s;
+    pointer-events: none;
+    bottom: 10px;
+  }
+
+  .contact-form .formBox,
+  .formBox .inputBx.w50 {
+    width: 71px;
+  }
+
+  .inputBx input,
+  .inputBx textarea {
+    width: 270px;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    margin-left: -233px;
+    resize: none;
+    margin-top: 38px;
+  }
+
+  .contact {
+    position: relative;
+    min-width: 228px;
+    min-height: 627px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputBx input[type="submit"] {
+    border: none;
+    background-color: #6868ff;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 0 10px 0;
+    width: 159px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .inputBx input,
+  .inputBx textarea {
+    width: 270px;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    margin-left: -233px;
+    resize: none;
+    margin-top: 38px;
+  }
+
+  .contact-form {
+    left: -187px;
+    position: absolute;
+    padding: 70px 50px;
+    background-color: #fff;
+    width: calc(100% - 150px);
+    margin-left: 150px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.097);
+    padding-left: 250px;
+    height: 799px;
+    top: 626px;
+  }
+
+  .contact .contactinfo {
+    position: absolute;
+    top: 40px;
+    width: 334px;
+    height: calc(100% - 80px);
+    background-color: #6868ff;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    left: -50px;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.138);
+  }
 }
 
 
@@ -1235,8 +1418,8 @@ nav .logo h2 {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  display: none;
 }
+
 footer {
   position: relative;
   display: flex;
