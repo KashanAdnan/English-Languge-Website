@@ -1,4 +1,5 @@
 // Requiring All  Modules
+require("dotenv").config()
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -6,13 +7,14 @@ const path = require("path");
 const port = 3000;
 const bycrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+const connectDatabase = require("./connection/database.connect")
+connectDatabase(process.env.MOGODB_URI)
 // Databases Requires
-const { SignUpUserModel } = require("./Database/signupdatabase");
-const { AdmissionUserModel } = require("./Database/admissiondatbase");
-const { DescModel } = require("./Database/descdatabase");
-const { TeachersUserModel } = require("./Database/teachers");
-const { ContactUserModel } = require("./Database/contact");
+const { SignUpUserModel } = require("./model/user");
+const { AdmissionUserModel } = require("./model/admission");
+const { DescModel } = require("./model/description");
+const { TeachersUserModel } = require("./model/teachers");
+const { ContactUserModel } = require("./model/contact");
 
 // Calling express
 const app = express();
@@ -582,5 +584,5 @@ app.post("/contact", (req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log("Server is Running On PORT Number : ", port);
+  console.log("Server is Running ", port);
 });
