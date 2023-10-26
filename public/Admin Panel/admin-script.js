@@ -3,7 +3,7 @@ const url = "http://localhost:3000";
 function getData() {
   var showdata = document.getElementById("showdata");
   const Http = new XMLHttpRequest();
-  Http.open("GET", url + "/admin");
+  Http.open("GET", url + "/users");
   Http.setRequestHeader("Content-Type", "application/json");
   Http.send(null);
   Http.onreadystatechange = (e) => {
@@ -14,7 +14,7 @@ function getData() {
 console.log(jsonRes)
 var arr =[]
 console.log(arr.length)
-      jsonRes.map((data) => {
+      jsonRes.data.map((data) => {
         console.log(data);
         out = `
     <tbody>

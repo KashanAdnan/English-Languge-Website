@@ -1,8 +1,13 @@
 @import url("./reset.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-body {
+* {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
+}
+
+body {
     min-height: 100vh;
     background: #fff !important;
     display: flex;
@@ -16,17 +21,22 @@ body {
     align-items: center !important;
     justify-content: space-around !important;
     padding: 10px 90px !important;
-    background-color: #6868ff !important;
+    background-color: #7a7aff !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important;
-    z-index: 1 !important;
+    z-index: 1000 !important;
     top: 0 !important;
-    width: 1340px !important;
-    margin-bottom: 50px !important;
-    position: sticky !important;
+    width: 100% !important;
+    position: fixed !important;
     color: #000;
-    font-family: 'Poppins', sans-serif;
+    height: 90px;
     margin-top: -10px;
     border-bottom-right-radius: 100px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .nav .logo img {
@@ -42,21 +52,47 @@ body {
     color: #fff;
 }
 
-.nav .line {
-    border: 1px solid #ccc;
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+nav .logo h2 {
+    display: none !important;
 }
 
 .nav-links ul {
     display: flex;
     list-style: none;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .nav-links ul li {
     margin-right: 20px;
     font-size: 16px;
     font-weight: 400;
+    position: relative;
+}
+
+.nav-links ul li::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s;
+}
+
+.nav-links ul li:hover::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
 }
 
 .nav-links ul li a {
@@ -64,10 +100,9 @@ body {
     color: #fff;
 }
 
-.buttons button {
+.buttons a {
     padding: 10px 30px;
     border: 0;
-    /* border: 1px solid #EFF5F5; */
     margin-right: 10px;
     font-size: 15px;
     background-color: transparent;
@@ -76,39 +111,27 @@ body {
     border-bottom: 1px solid #fff;
     border-left: 1px solid #ffffff;
     border-right: 1px solid #fff;
-}
-
-.buttons button a {
+    transition: 0.5s;
     color: #fff;
     text-decoration: none;
 }
 
-.buttons button:hover {
-    box-shadow: 0px 0 10px rgba(0, 0, 0, .62);
-    border-radius: 20px;
+.buttons a:hover {
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.117);
+    border-radius: 10px;
     cursor: pointer;
+    background-color: #fff;
+    color: #6868ff;
     transform: scale(110%);
-    /* margin-right: 0px; */
-    transition: 0.5s;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -100px;
-    /* background-color: rgba(100, 139, 172, 0.233); */
-    width: 100%;
-    background-size: 100% 100%;
-}
 
 .signup-card-container img {
     width: 500px;
 }
 
 .signup-card {
-    width: 1005;
-    /* height: 300px; */
+    width: 1005px;
     background-color: #fff;
     padding: 4rem;
     border-radius: 10px;
@@ -126,6 +149,10 @@ body {
 .signup-card-header,
 .signup-card-footer {
     text-align: center;
+}
+
+.signup-card-container{
+    margin-top: 130px;
 }
 
 /* .signup-card a {
@@ -317,37 +344,37 @@ footer {
     padding: 20px 50px;
     flex-direction: column;
     margin-top: 100px;
-  }
-  
-  footer .social-icons,
-  footer .footer-menu {
+}
+
+footer .social-icons,
+footer .footer-menu {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px 0 !important;
     flex-wrap: wrap;
-  }
-  
-  footer .social-icons li,
-  footer .footer-menu li {
+}
+
+footer .social-icons li,
+footer .footer-menu li {
     list-style: none;
-  }
-  
-  footer .social-icons li a {
+}
+
+footer .social-icons li a {
     font-size: 2em;
     color: #fff;
     margin: 0 10px;
     display: inline-block;
     transition: 0.5s;
     text-decoration: none;
-  }
-  
-  footer .social-icons li a:hover {
+}
+
+footer .social-icons li a:hover {
     transform: translateY(-10px);
-  }
-  
-  footer .footer-menu li a {
+}
+
+footer .footer-menu li a {
     font-size: 1em;
     color: #fff;
     margin: 0 10px;
@@ -355,20 +382,20 @@ footer {
     text-decoration: none;
     opacity: 0.7;
     transition: 0.2s;
-  }
-  
-  footer .footer-menu li a:hover {
+}
+
+footer .footer-menu li a:hover {
     opacity: 1;
-  }
-  
-  footer p {
+}
+
+footer p {
     color: #fff;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-  }
-  
-  footer .wave {
+}
+
+footer .wave {
     position: absolute;
     top: -100px;
     left: 0;
@@ -376,57 +403,57 @@ footer {
     height: 100px;
     background: url("./images/wave.png");
     background-size: 1000px 100px;
-  }
-  
-  footer .wave#wave1 {
+}
+
+footer .wave#wave1 {
     z-index: 1000;
     opacity: 1;
     bottom: 0;
     animation: animateWave 4s linear infinite;
-  }
-  
-  footer .wave#wave2 {
+}
+
+footer .wave#wave2 {
     z-index: 999;
     opacity: 0.5;
     bottom: 10px;
     animation: animateWave_02 4s linear infinite;
-  }
-  
-  footer .wave#wave3 {
+}
+
+footer .wave#wave3 {
     z-index: 1000;
     opacity: 0.2;
     bottom: 15px;
     animation: animateWave_03 3s linear infinite;
-  }
-  
-  footer .wave#wave4 {
+}
+
+footer .wave#wave4 {
     z-index: 999;
     opacity: 0.7;
     bottom: 20px;
     animation: animateWave_04 3s linear infinite;
-  }
-  
-  @keyframes animateWave {
+}
+
+@keyframes animateWave {
     0% {
-      background-position-x: 1000px;
+        background-position-x: 1000px;
     }
-  
+
     100% {
-      background-position-x: 0px;
+        background-position-x: 0px;
     }
-  
-  }
-  
-  @keyframes animateWave_02 {
+
+}
+
+@keyframes animateWave_02 {
     0% {
-      background-position-x: 0px;
+        background-position-x: 0px;
     }
-  
+
     100% {
-      background-position-x: 1000px;
+        background-position-x: 1000px;
     }
-  }
-  
+}
+
 
 @media (max-width : 700px) {
     .nav {
@@ -438,13 +465,16 @@ footer {
         flex-direction: column;
 
     }
+
     .logo h1 {
         font-size: 27px !important;
         width: 300px;
     }
-    .nav-links{
+
+    .nav-links {
         margin-top: -20px;
     }
+
     .nav-links li a {
         font-size: 13px;
         width: 60px;
@@ -459,19 +489,23 @@ footer {
         margin-left: 4px !important;
         width: 335px !important;
     }
+
     .signup-card-container img {
         width: 310px;
         margin-top: 40px;
-    }   
+    }
+
     footer .footer-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .buttons{
+
+    .buttons {
         margin-left: -93px;
     }
+
     .buttons button {
         padding: 10px 25px;
         border: 0;
@@ -486,6 +520,7 @@ footer {
         border-left: 1px solid #ffffff;
         border-right: 1px solid #fff;
     }
+
     .signup-card {
         display: flex;
         align-items: center;
@@ -495,7 +530,11 @@ footer {
         margin-left: -5px;
         width: 342px;
     }
-    .signup-card input[type="text"], .signup-card input[type="number"], .signup-card input[type="email"], .signup-card input[type="password"] {
+
+    .signup-card input[type="text"],
+    .signup-card input[type="number"],
+    .signup-card input[type="email"],
+    .signup-card input[type="password"] {
         border: none;
         outline: none;
         background: transparent;
@@ -507,6 +546,7 @@ footer {
         color: #000;
         background-color: rgba(200, 220, 255, 0.6);
     }
+
     .signup-card-form h1 {
         font-size: 2rem;
         font-weight: 400;
@@ -517,6 +557,7 @@ footer {
         margin-top: 56px;
         text-align: center;
     }
+
     .signup-card-form {
         display: flex;
         flex-direction: row;
@@ -527,6 +568,7 @@ footer {
         width: 347px;
         margin-top: -80px;
     }
+
     .signup-card button {
         padding: 1rem 1.5rem;
         font-family: 'Poppins';
@@ -543,6 +585,7 @@ footer {
         margin-left: 41px;
         transform: translateX(-60%);
     }
+
     footer {
         position: relative;
         width: 100%;
@@ -556,6 +599,7 @@ footer {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         border-top-left-radius: 100px;
     }
+
     footer .footer-container .sec {
         margin-right: 506px;
     }

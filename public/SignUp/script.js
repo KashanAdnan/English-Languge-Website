@@ -11,21 +11,24 @@ function sinup() {
   axios.post(port + "/register", { ...obj }).then((res) => {
     Swal.fire(
       'Good job!',
-      'You clicked the button!',
+      'Register Succesfully!!',
       'success'
     )
     setInterval(function () {
       window.location.href = "../Home/home.html";
     }, 3000);
   }).catch((error) => {
-    console.log(error);Swal.fire(
-      'Good job!',
-      'You clicked the button!',
-      'errorr'
+    Swal.fire(
+      'OOPS!',
+      error.response.data.message,
+      'error'
     )
   })
-
-
-
   return false;
 }
+
+axios.get("http://localhost:3000/me").then((res) => {
+  window.location.href = "./Home/home.html"
+}).catch((err) => {
+  console.log(err);
+})

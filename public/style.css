@@ -357,10 +357,9 @@ nav .logo h2 {
 }
 
 .course-heading h1 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 700;
   color: #7a7aff;
-  font-variant: small-caps;
   font-stretch: ultra-expanded;
 }
 
@@ -1237,6 +1236,7 @@ nav .logo h2 {
   min-height: 100vh;
   display: none;
 }
+
 footer {
   position: relative;
   display: flex;

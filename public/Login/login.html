@@ -18,23 +18,23 @@
 <body>
       <div class="nav">
             <div class="logo">
-              <h1>
-            Syed Tarique Ahmed
-              </h1>
+                  <h1>
+                        Syed Tarique Ahmed
+                  </h1>
             </div>
             <div class="nav-links">
-              <ul>
-                <li><a href="./home.html">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
-              </ul>
+                  <ul>
+                        <li><a href="./home.html">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">SERVICES</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                  </ul>
             </div>
             <div class="buttons">
-              <button><a href="../index.html"> Sign Up</a></button>
-              <button><a href="./login.html"> Sign In</a></button>
+                  <a href="../SignUp/index.html"> Sign Up</a>
+                  <a href="./login.html">Login</a>
             </div>
-          </div>  
+      </div>
       <div class="login-card-container">
             <img src="./images/log.svg" alt="">
             <div class="login-card">
@@ -43,11 +43,8 @@
                   </div>
                   <div class="login-card-header">
                         <h1>Sign In</h1>
-                        <div>
-                              Please Login to use platform
-                        </div>
                   </div>
-                  <form m class="login-card-form" onsubmit="return login()">
+                  <form class="login-card-form" onsubmit="return login()">
                         <div class="form-item">
                               <span class=" form-item-icon material-symbols-outlined">email</span>
                               <input type="email" id="email" placeholder="Enter Email" autofocus>
@@ -72,7 +69,7 @@
                         an
                         account
                         ?
-                        <a href="../index.html">Create
+                        <a href="../SignUp/index.html">Create
                               a
                               Free
                               account</a>
@@ -81,28 +78,29 @@
       </div>
       <footer>
             <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
+                  <div class="wave" id="wave1"></div>
+                  <div class="wave" id="wave2"></div>
+                  <div class="wave" id="wave3"></div>
+                  <div class="wave" id="wave4"></div>
             </div>
             <ul class="social-icons">
-              <li><a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href="https://www.facebook.com"><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href="https://www.facebook.com"><i class="fa-brands fa-twitter"></i></a></li>
-              <li><a href="https://www.facebook.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                  <li><a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a href="https://www.facebook.com"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="https://www.facebook.com"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="https://www.facebook.com"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul>
             <ul class="footer-menu">
-              <li><a href="">HOME</a></li>
-              <li><a href="">COURSES</a></li>
-              <li><a href="">PRICING</a></li>
-              <li><a href="">TEACHERS</a></li>
+                  <li><a href="">HOME</a></li>
+                  <li><a href="">COURSES</a></li>
+                  <li><a href="">PRICING</a></li>
+                  <li><a href="">TEACHERS</a></li>
             </ul>
             <p>&copy; 2023 SyedTariqAhmed | All Right Reserved</p>
-          </footer>
-        
-      <script src="./script.js"></script>
+      </footer>
+
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="./script.js"></script>
 </body>
 
 </html>

@@ -6,14 +6,17 @@ const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { UserModel } = require("./model/user");
+const cookieParser = require("cookie-parser")
 const { AdmissionModel } = require("./model/admission");
 const connectDatabase = require("./connection/database.connect");
 const app = express()
+
 connectDatabase(process.env.MONGODB_URI)
 app.use(cors({ origin: "*", credentials: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
-app.use("/", express.static(path.resolve(path.join(__dirname, "public"))));
+app.use(express.static(path.resolve(path.join(__dirname, "public"))));
 
 app.post("/register", async (req, res) => {
     try {
@@ -66,6 +69,16 @@ app.post("/login", async (req, res) => {
         if (isUser) {
             const isMatch = await bcrypt.compare(password, isUser.password);
             if (isMatch) {
+                var token = jwt.sign(
+                    {
+                        id: isUser._id
+                    },
+                    "hIHkthjUhuvfhuiyvnjy7yii9trefhon"
+                );
+                res.cookie("jToken", token, {
+                    maxAge: 86_400_000,
+                    httpOnly: true,
+                });
                 res.status(200).send({
                     succes: false,
                     message: "Login Succesfull!"
@@ -155,6 +168,66 @@ app.get("/users", async (req, res) => {
     }
 })
 
+app.get("/me", async (req, res) => {
+    try {
+        const { jToken } = req.cookies;
+        console.log(jToken);
+        jwt.verify(jToken, "hIHkthjUhuvfhuiyvnjy7yii9trefhon",async function (err, decoded) {
+            if (decoded) {
+                console.log(decoded);
+                const user = await UserModel.findOne({ _id: decoded.id });
+                res.status(200).send({
+                    success: true,
+                    user
+                })
+            } else {
+                console.log(err);
+            }
+        });
+    } catch (error) {
+        res.status(500).send({
+            succes: false,
+            message: error.message
+        })
+    }
+})
+
+app.get("/logout", async (req, res) => {
+    try {
+        req.cookies.jToken = ""
+        res.status(200).send({
+            succes: true,
+            message: "Logout Succesfully!"
+        })
+    } catch (error) {
+        res.status(500).send({
+            succes: false,
+            message: error.message
+        })
+    }
+})
+
+app.use((req, res, next) => {
+    if (!req.cookies.jToken) {
+        res.status(401).send({
+            message: "invalid token!",
+        });
+        return;
+    }
+    jwt.verify(
+        req.cookies.jToken,
+        "hIHkthjUhuvfhuiyvnjy7yii9trefhon",
+        (err, decodeData) => {
+            if (decodeData) {
+
+            } else {
+                res.status(401).send({
+                    message: "invalid token",
+                });
+            }
+        }
+    );
+});
 
 
 app.listen(3000, () => {

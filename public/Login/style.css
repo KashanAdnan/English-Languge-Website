@@ -1,13 +1,15 @@
 @import url("./reset.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
     background: #fff !important;
     display: flex;
     align-items: center;
@@ -72,23 +74,120 @@ body {
     background-color: transparent;
     font-family: 'Poppins';
     border-top: 1px solid #fff;
-    border-bottom:  1px solid #fff;
+    border-bottom: 1px solid #fff;
     border-left: 1px solid #ffffff;
     border-right: 1px solid #fff;
 }
 
-.buttons button a {
+.nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 10px 90px !important;
+    background-color: #7a7aff !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important;
+    z-index: 1000 !important;
+    top: 0 !important;
+    width: 100% !important;
+    position: fixed !important;
+    color: #000;
+    height: 90px;
+    margin-top: -10px;
+    border-bottom-right-radius: 100px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav .logo img {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+}
+
+.nav .logo h1 {
+    margin-top: 10px;
+    font-size: 34px;
+    font-weight: 500;
+    color: #fff;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+nav .logo h2 {
+    display: none !important;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.nav-links ul li {
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+}
+
+.nav-links ul li::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s;
+}
+
+.nav-links ul li:hover::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.buttons a {
+    padding: 10px 30px;
+    border: 0;
+    margin-right: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    font-family: 'Poppins';
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #fff;
+    transition: 0.5s;
     color: #fff;
     text-decoration: none;
 }
-.buttons button:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    border-radius: 30px;
+
+.buttons a:hover {
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.117);
+    border-radius: 10px;
     cursor: pointer;
+    background-color: #fff;
+    color: #6868ff;
     transform: scale(110%);
-     margin-right: 10px;
-    transition: 0.5s;
 }
+
 .container {
     display: flex;
     align-items: center;
@@ -99,91 +198,110 @@ body {
     background-size: 100% 100%;
 }
 
-.login-card-container{
+.login-card-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow:  0 0 10px rgba(0, 0, 0, 0.4);
-padding: 30px 50px;
-margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    margin-top: 120px;
+    border-radius: 10px;
+    margin-bottom: 50px;
 }
-.login-card-container img{
+
+.login-card-container img {
     width: 500px;
     margin-top: -30px;
 }
-.login-card-container img:hover{
+
+.login-card-container img:hover {
     transform: translateY(-16%);
     transition: 0.4s;
 }
-.login-card{
+
+.login-card {
     width: 450px;
-    height:   400px;
-    /* background-color: rgba(255,255,255,.6); */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 4rem;
     border-radius: 10px;
     position: relative;
-    margin-top: -80px;
-    margin-bottom: 130px;
 }
+
 .login-card-header,
-.login-card-footer{
+.login-card-footer {
     text-align: center;
 }
-.login-card a{
+
+.login-card a {
     text-decoration: none;
     color: #35339a;
 }
-.login-card a:hover{
+
+.login-card a:hover {
     text-decoration: underline;
 }
-.login-card-header{
+
+.login-card-header {
     margin-bottom: 2rem;
 }
-.login-card-header h1{
+
+.login-card-header h1 {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: .5rem;
 }
-.login-card-header h1 + div{
+
+.login-card-header h1+div {
     font-size: calc(1.5rem * .7);
     opacity: .7;
 }
-.login-card-form{
+
+.login-card-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
-.login-card-form .form-item{
+
+.login-card-form .form-item {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.login-card-form .form-item .form-item-icon{
+
+.login-card-form .form-item .form-item-icon {
     position: absolute;
     top: 1rem;
     left: 1.4rem;
     font-size: 1.3rem;
     opacity: .4;
 }
-.login-card-form .checkbox{
+
+.login-card-form .checkbox {
     display: flex;
     align-items: center;
     gap: 7px;
 }
-.login-card-form .form-item-others{
+
+.login-card-form .form-item-others {
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: calc(1rem * .8);
     margin-bottom: .5rem;
 }
-.login-card-footer{
+
+.login-card-footer {
     margin-top: 1.5rem;
     font-size: calc(1rem * .8);
 }
+
 .login-card input[type="email"],
-.login-card input[type="password"]{
+.login-card input[type="password"] {
     border: none;
     outline: none;
     background: transparent;
@@ -192,20 +310,23 @@ margin-bottom: 50px;
     padding-left: calc(1rem * 3.5);
     width: 350px;
     transition: background .5s;
-    color:  #000;
+    color: #000;
     background-color: rgba(200, 220, 255, 0.6);
-}   
-.login-card input::placeholder{
+}
+
+.login-card input::placeholder {
     font-family: 'Poppins';
     color: #000;
-    margin-bottom:  6px;
+    margin-bottom: 6px;
 }
-.login-card input[type="checkbox"]{
+
+.login-card input[type="checkbox"] {
     width: 16px;
     height: 16px;
     accent-color: black;
 }
-.login-card button{
+
+.login-card button {
     padding: 1rem 1.5rem;
     font-family: 'Poppins';
     background-color: rgb(134, 134, 255);
@@ -216,17 +337,19 @@ margin-bottom: 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    transition:  .5s;
+    transition: .5s;
     width: 150px;
     /* margin-left: -500px; */
     transform: translateX(5%);
 }
-.login-card .login-card-form button:hover{
+
+.login-card .login-card-form button:hover {
     transform: scale(110%);
     margin-left: 90px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
-.login-card-social{
+
+.login-card-social {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -234,19 +357,22 @@ margin-bottom: 50px;
     text-align: center;
     margin-top: 3rem;
 }
-.login-card-social > div{
+
+.login-card-social>div {
     opacity: .8;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: calc(1rem * .8);
 }
-.login-card-social-btn{
+
+.login-card-social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
 }
-.login-card-social-btn a{
+
+.login-card-social-btn a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -254,14 +380,16 @@ margin-bottom: 50px;
     width: 50px;
     height: 50px;
     padding: 10px;
-    background-color: rgba(255,255,255,.6);
+    background-color: rgba(255, 255, 255, .6);
     border-radius: 100px;
     transition: 0.4s;
 }
-.login-card-social-btn a:hover{
+
+.login-card-social-btn a:hover {
     background-color: #fff;
     transform: scale(1.1);
 }
+
 footer {
     position: relative;
     display: flex;
@@ -273,37 +401,37 @@ footer {
     padding: 20px 50px;
     flex-direction: column;
     margin-top: 100px;
-  }
-  
-  footer .social-icons,
-  footer .footer-menu {
+}
+
+footer .social-icons,
+footer .footer-menu {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px 0 !important;
     flex-wrap: wrap;
-  }
-  
-  footer .social-icons li,
-  footer .footer-menu li {
+}
+
+footer .social-icons li,
+footer .footer-menu li {
     list-style: none;
-  }
-  
-  footer .social-icons li a {
+}
+
+footer .social-icons li a {
     font-size: 2em;
     color: #fff;
     margin: 0 10px;
     display: inline-block;
     transition: 0.5s;
     text-decoration: none;
-  }
-  
-  footer .social-icons li a:hover {
+}
+
+footer .social-icons li a:hover {
     transform: translateY(-10px);
-  }
-  
-  footer .footer-menu li a {
+}
+
+footer .footer-menu li a {
     font-size: 1em;
     color: #fff;
     margin: 0 10px;
@@ -311,20 +439,20 @@ footer {
     text-decoration: none;
     opacity: 0.7;
     transition: 0.2s;
-  }
-  
-  footer .footer-menu li a:hover {
+}
+
+footer .footer-menu li a:hover {
     opacity: 1;
-  }
-  
-  footer p {
+}
+
+footer p {
     color: #fff;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-  }
-  
-  footer .wave {
+}
+
+footer .wave {
     position: absolute;
     top: -100px;
     left: 0;
@@ -332,57 +460,57 @@ footer {
     height: 100px;
     background: url("./images/wave.png");
     background-size: 1000px 100px;
-  }
-  
-  footer .wave#wave1 {
+}
+
+footer .wave#wave1 {
     z-index: 1000;
     opacity: 1;
     bottom: 0;
     animation: animateWave 4s linear infinite;
-  }
-  
-  footer .wave#wave2 {
+}
+
+footer .wave#wave2 {
     z-index: 999;
     opacity: 0.5;
     bottom: 10px;
     animation: animateWave_02 4s linear infinite;
-  }
-  
-  footer .wave#wave3 {
+}
+
+footer .wave#wave3 {
     z-index: 1000;
     opacity: 0.2;
     bottom: 15px;
     animation: animateWave_03 3s linear infinite;
-  }
-  
-  footer .wave#wave4 {
+}
+
+footer .wave#wave4 {
     z-index: 999;
     opacity: 0.7;
     bottom: 20px;
     animation: animateWave_04 3s linear infinite;
-  }
-  
-  @keyframes animateWave {
+}
+
+@keyframes animateWave {
     0% {
-      background-position-x: 1000px;
+        background-position-x: 1000px;
     }
-  
+
     100% {
-      background-position-x: 0px;
+        background-position-x: 0px;
     }
-  
-  }
-  
-  @keyframes animateWave_02 {
+
+}
+
+@keyframes animateWave_02 {
     0% {
-      background-position-x: 0px;
+        background-position-x: 0px;
     }
-  
+
     100% {
-      background-position-x: 1000px;
+        background-position-x: 1000px;
     }
-  }
-  
+}
+
 @media (max-width : 700px) {
     .nav {
         display: flex !important;
@@ -403,10 +531,11 @@ footer {
         border-bottom-right-radius: 100px;
         flex-direction: column;
     }
-    .nav-links{
-            margin-top: -51px;
-            margin-bottom: -24px;
-        
+
+    .nav-links {
+        margin-top: -51px;
+        margin-bottom: -24px;
+
     }
 
     .logo h1 {
@@ -432,16 +561,19 @@ footer {
     .signup-card-container img {
         width: 310px;
         margin-top: 40px;
-    }   
+    }
+
     footer .footer-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .buttons{
+
+    .buttons {
         margin-left: -93px;
     }
+
     .buttons button {
         padding: 10px 25px;
         border: 0;
@@ -456,6 +588,7 @@ footer {
         border-left: 1px solid #ffffff;
         border-right: 1px solid #fff;
     }
+
     .login-card-container {
         display: flex;
         align-items: center;
@@ -468,10 +601,12 @@ footer {
         height: 744px;
         border-radius: 10px;
     }
+
     .login-card-container img {
         width: 320px;
         margin-top: -30px;
     }
+
     footer {
         position: relative;
         width: 389px;
@@ -485,13 +620,13 @@ footer {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         border-top-left-radius: 100px;
     }
-    
+
     footer .footer-container .sec {
-      margin-right: 130px;
-      width: 303px;
+        margin-right: 130px;
+        width: 303px;
     }
-    
-      footer .footer-container {
+
+    footer .footer-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;

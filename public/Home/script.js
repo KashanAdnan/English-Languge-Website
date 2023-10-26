@@ -1,6 +1,7 @@
 const url = "http://localhost:3000";
 
 function getData() {
+  
   var showdata = document.getElementById("showdata");
   const Http = new XMLHttpRequest();
   Http.open("GET", url + "/descdata");
